@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Australia Fuel Security Daily Report — Share-Ready Snapshot — 18 March 2026</title>
+<style>
+  :root{
+    --bg:#f4f7fb; --card:#ffffff; --ink:#142033; --muted:#5d6b82; --line:#d7e0ec;
+    --blue:#0b57d0; --blue2:#2f6fe6; --amber:#fff1d6; --amber-ink:#8a5600;
+    --good:#e8f5ec; --good-ink:#0e6b2e; --soft:#f9fbff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:Inter,Arial,Helvetica,sans-serif; line-height:1.5;
+  }
+  .page{max-width:1240px; margin:0 auto; padding:28px 22px 44px}
+  .hero{
+    background:linear-gradient(135deg,var(--blue),var(--blue2));
+    color:#fff; border-radius:22px; padding:26px 28px 24px;
+    box-shadow:0 16px 36px rgba(11,87,208,.18);
+  }
+  .hero h1{margin:0 0 10px; font-size:34px; line-height:1.15}
+  .hero .sub{font-size:15px; color:#e6eeff; margin:0 0 12px}
+  .hero .lead{font-size:16px; margin:0}
+  .toolbar{
+    margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;
+  }
+  .button{
+    display:inline-block; padding:9px 12px; border-radius:999px; font-size:13px;
+    font-weight:700; text-decoration:none; background:rgba(255,255,255,.16); color:#fff;
+    border:1px solid rgba(255,255,255,.28);
+  }
+  .button:hover{text-decoration:none; background:rgba(255,255,255,.22)}
+  .section{margin-top:24px}
+  .cards{
+    display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin-top:18px;
+  }
+  .card, .panel{
+    background:var(--card); border:1px solid var(--line); border-radius:18px;
+    box-shadow:0 4px 16px rgba(20,32,51,.04);
+  }
+  .card{padding:16px 16px 14px}
+  .card .label{
+    font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); font-weight:700;
+    margin-bottom:8px;
+  }
+  .card .value{font-size:30px; font-weight:800; line-height:1.05; margin-bottom:5px}
+  .card .meta{font-size:13px; color:var(--muted)}
+  .grid-2{
+    display:grid; grid-template-columns:1.2fr .8fr; gap:18px; margin-top:18px;
+  }
+  .panel{padding:18px}
+  h2{
+    margin:0 0 12px; font-size:22px; padding-bottom:8px; border-bottom:2px solid var(--line);
+  }
+  h3{margin:0 0 10px; font-size:17px}
+  p{margin:0 0 10px; font-size:14px}
+  ul,ol{margin:8px 0 0 20px; padding:0}
+  li{margin:6px 0; font-size:14px}
+  .tag{
+    display:inline-block; padding:6px 10px; border-radius:999px; font-size:12px; font-weight:800;
+    margin:0 0 10px;
+  }
+  .tag-amber{background:var(--amber); color:var(--amber-ink)}
+  .tag-good{background:var(--good); color:var(--good-ink)}
+  .kicker{
+    background:var(--soft); border:1px solid var(--line); border-radius:14px; padding:12px 14px; margin-top:8px;
+  }
+  .table-wrap{
+    overflow:auto; border:1px solid var(--line); border-radius:18px; background:#fff;
+  }
+  table{width:100%; border-collapse:collapse}
+  th,td{
+    text-align:left; padding:10px 11px; border-bottom:1px solid var(--line); vertical-align:top; font-size:13px;
+  }
+  th{
+    position:sticky; top:0; background:#f7faff; color:var(--muted); font-size:12px;
+    text-transform:uppercase; letter-spacing:.03em;
+  }
+  tr:last-child td{border-bottom:none}
+  .small{font-size:12px; color:var(--muted)}
+  .muted{color:var(--muted)}
+  .toc{
+    background:#fff; border:1px solid var(--line); border-radius:16px; padding:14px 16px;
+  }
+  .toc a{margin-right:14px; white-space:nowrap}
+  a{color:var(--blue); text-decoration:none}
+  a:hover{text-decoration:underline}
+  .foot{
+    margin-top:26px; padding:16px 18px; background:#fff; border:1px solid var(--line); border-radius:18px;
+    color:var(--muted); font-size:12px;
+  }
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  @media (max-width:980px){
+    .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid-2{grid-template-columns:1fr}
+  }
+  @media (max-width:620px){
+    .cards{grid-template-columns:1fr}
+    .hero h1{font-size:28px}
+  }
+  @media print{
+    body{background:#fff}
+    .page{max-width:none; padding:0}
+    .hero{box-shadow:none}
+    .card,.panel,.toc,.foot,.table-wrap{box-shadow:none}
+    .toolbar{display:none}
+    a{color:#000; text-decoration:none}
+    th{position:static}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="hero">
+    <h1>Australia Fuel Security Daily Report</h1>
+    <p class="sub"><strong>Share-ready snapshot</strong> • Wednesday, 18 March 2026 • National stocks, Queensland / Brisbane supply signals, prices, and observed tanker movements</p>
+    <p class="lead"><strong>Executive read:</strong> Australia’s official stock data is weekly, not daily. A credible daily brief therefore combines <strong>official weekly national reserves</strong> with <strong>daily port movements, refinery / terminal signals, and price behavior</strong> to estimate whether Queensland and Brisbane conditions are tightening, stabilizing, or easing.</p>
+    <div class="toolbar">
+      <a class="button" href="#changes">What changed</a>
+      <a class="button" href="#stocks">National stocks</a>
+      <a class="button" href="#proxy">Queensland proxy</a>
+      <a class="button" href="#prices">Prices</a>
+      <a class="button" href="#appendix">Tanker appendix</a>
+    </div>
+  </div>
+
+  <div class="section toc">
+    <strong>Quick navigation:</strong>
+    <a href="#changes">What changed since yesterday</a>
+    <a href="#stocks">Official national stocks & policy</a>
+    <a href="#proxy">Brisbane / Queensland proxy</a>
+    <a href="#prices">Retail & wholesale prices</a>
+    <a href="#flows">What to infer from inflows</a>
+    <a href="#appendix">30-day tanker appendix</a>
+    <a href="#method">Method & caveats</a>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="label">Official petrol stock</div>
+      <div class="value">1.6 bn L</div>
+      <div>37 days of cover</div>
+      <div class="meta">Latest public weekly update</div>
+    </div>
+    <div class="card">
+      <div class="label">Official diesel stock</div>
+      <div class="value">2.7 bn L</div>
+      <div>30 days of cover</div>
+      <div class="meta">Latest public weekly update</div>
+    </div>
+    <div class="card">
+      <div class="label">Official jet fuel stock</div>
+      <div class="value">0.8 bn L</div>
+      <div>29 days of cover</div>
+      <div class="meta">Latest public weekly update</div>
+    </div>
+    <div class="card">
+      <div class="label">Brisbane ULP91</div>
+      <div class="value">230.5 c/L</div>
+      <div>SEQ proxy: 231.5 c/L</div>
+      <div class="meta">Simple average of Brisbane, Gold Coast, Sunshine Coast</div>
+    </div>
+  </div>
+
+  <div class="grid-2 section" id="changes">
+    <div class="panel">
+      <h2>What changed since yesterday</h2>
+      <ul>
+        <li>The latest public weekly stock update still points to <strong>adequate national supply</strong>, but the composition has shifted: petrol cover is stronger than in the earlier March briefing, while <strong>diesel and jet-fuel cover are lower</strong>.</li>
+        <li>The <strong>temporary reduction in the Minimum Stockholding Obligation</strong> is active, enabling release of up to <strong>762 million litres</strong> of petrol and diesel from domestic stocks.</li>
+        <li>The temporary <strong>fuel-quality waiver</strong> remains an important Brisbane-specific lever: it allows additional supply from <strong>Ampol’s Lytton refinery</strong> to stay in the domestic market.</li>
+        <li>Brisbane still has a visible <strong>crude-tanker presence</strong> on current AIS port pages. That is a supply-positive signal, but it is <strong>not</strong> a direct measure of local inventory.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h2>Assessment</h2>
+      <div class="tag tag-amber">AMBER — tight but supplied</div>
+      <p><strong>Interpretation:</strong> the evidence still supports a <strong>stress-monitoring</strong> reading rather than a depletion reading. National stocks remain above statutory floors, shipping activity is still visible into Queensland, and Brisbane has refinery-linked support, but retail prices remain elevated and regional distribution stress has not fully washed out.</p>
+      <div class="kicker">
+        <p><strong>Useful directional clues:</strong></p>
+        <ul>
+          <li>Observed arrivals this partial week: <strong>3</strong> nationally in the sampled appendix to date.</li>
+          <li>Retail–wholesale gap in Brisbane ULP: about <strong>36.3 c/L</strong>.</li>
+          <li>No official daily Brisbane stock figure exists publicly; any local stock view remains a <strong>proxy estimate</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="stocks">
+    <h2>1) Official national stocks and policy settings</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Item</th><th>Latest figure</th><th>Why it matters</th><th>Source link</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Petrol stock</td>
+            <td>1.6 billion litres / 37 days</td>
+            <td>Latest publicly stated weekly reserve position</td>
+            <td><a href="https://minister.dcceew.gov.au/bowen/transcripts/press-conference-smithfield-nsw">Ministerial weekly update</a></td>
+          </tr>
+          <tr>
+            <td>Diesel stock</td>
+            <td>2.7 billion litres / 30 days</td>
+            <td>Latest publicly stated weekly reserve position</td>
+            <td><a href="https://minister.dcceew.gov.au/bowen/transcripts/press-conference-smithfield-nsw">Ministerial weekly update</a></td>
+          </tr>
+          <tr>
+            <td>Jet fuel stock</td>
+            <td>800 million litres / 29 days</td>
+            <td>Latest publicly stated weekly reserve position</td>
+            <td><a href="https://minister.dcceew.gov.au/bowen/transcripts/press-conference-smithfield-nsw">Ministerial weekly update</a></td>
+          </tr>
+          <tr>
+            <td>MSO baseline volumes</td>
+            <td>Gasoline 1,067 ML • Kerosene 663 ML • Diesel 2,742 ML</td>
+            <td>Statutory baseline before temporary reductions</td>
+            <td><a href="https://www.dcceew.gov.au/energy/security/australias-fuel-security/minimum-stockholding-obligation/statistics">DCCEEW MSO statistics</a></td>
+          </tr>
+          <tr>
+            <td>Temporary MSO reduction</td>
+            <td>Up to 20% of petrol and diesel MSO, or up to 762 million litres</td>
+            <td>Emergency flexibility to ease regional distribution pressure</td>
+            <td><a href="https://www.dcceew.gov.au/energy/security/australias-fuel-security/minimum-stockholding-obligation">DCCEEW MSO page</a></td>
+          </tr>
+          <tr>
+            <td>Fuel-quality waiver</td>
+            <td>Approx. +100 million litres per month for 2 months</td>
+            <td>Brisbane / Lytton-related domestic supply boost</td>
+            <td><a href="https://minister.dcceew.gov.au/bowen/transcripts/interview-thomas-oriti-abc-drive-sydney">ABC interview with the minister</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section" id="proxy">
+    <h2>2) Brisbane / Queensland daily proxy</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Signal</th><th>Latest visible read</th><th>Interpretation</th><th>Source link</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Official ship-movement source</td>
+            <td>QSHIPS public filters by Today / Yesterday / Tomorrow / Next 7 days / Last 7 days</td>
+            <td>Best official public route for Queensland port monitoring</td>
+            <td><a href="https://www.msq.qld.gov.au/shipping/shipping-movements">Maritime Safety Queensland / QSHIPS</a></td>
+          </tr>
+          <tr>
+            <td>Brisbane tankers in port</td>
+            <td>NAVIG8 PROSPERITY, TP PROMISE, UNITY VENTURE</td>
+            <td>Crude-tanker presence is a positive inflow signal</td>
+            <td><a href="https://www.vesselfinder.com/ports/AUBNE001">VesselFinder — Port of Brisbane</a></td>
+          </tr>
+          <tr>
+            <td>Forward Brisbane arrival signal</td>
+            <td>STI RAMBLA expected 18 March</td>
+            <td>Forward-looking crude arrival cue</td>
+            <td><a href="https://www.vesselfinder.com/ports/AUBNE001">VesselFinder — Port of Brisbane</a></td>
+          </tr>
+          <tr>
+            <td>State-wide hydrocarbon movement</td>
+            <td>Gladstone recently showed GASCHEM HOMER arriving on 17 March</td>
+            <td>Useful Queensland flow signal, though not motor-fuel specific</td>
+            <td><a href="https://www.vesselfinder.com/ports/AUGLT001">VesselFinder — Port of Gladstone</a></td>
+          </tr>
+          <tr>
+            <td>Northern Queensland forward calls</td>
+            <td>THERESA MICRONESIA (20 Mar), STENA CONTINENT (28 Mar), ATLANTIC T (28 Mar)</td>
+            <td>Useful lead indicator for future product movement</td>
+            <td><a href="https://www.vesselfinder.com/ports/AUTSV001">VesselFinder — Port of Townsville</a></td>
+          </tr>
+          <tr>
+            <td>Known Brisbane storage anchor</td>
+            <td>IOR Lytton Terminal: 110 ML diesel import/storage capacity; up to 12 additional days of Brisbane-market supply storage</td>
+            <td>Capacity reference point, not a live stock reading</td>
+            <td><a href="https://www.ior.com.au/fuel-solutions/supply-and-trading/lytton-terminal/">IOR Lytton Terminal</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section" id="prices">
+    <h2>3) Retail and wholesale prices</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Metric</th><th>Latest figure</th><th>Comment</th><th>Source link</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Brisbane ULP91 average</td>
+            <td>230.5 c/L</td>
+            <td>Live retail average using official reporting-scheme data via FuelRadar</td>
+            <td><a href="https://fuelradar.com.au/fuel-prices/queensland/brisbane/u91">FuelRadar — Brisbane ULP91</a></td>
+          </tr>
+          <tr>
+            <td>Gold Coast ULP91 average</td>
+            <td>230.6 c/L</td>
+            <td>Used in SEQ proxy</td>
+            <td><a href="https://fuelradar.com.au/map/location/au/qld/4217/gold-coast">FuelRadar — Gold Coast</a></td>
+          </tr>
+          <tr>
+            <td>Sunshine Coast ULP91 average</td>
+            <td>233.3 c/L</td>
+            <td>Used in SEQ proxy</td>
+            <td><a href="https://fuelradar.com.au/map/location/au/qld/4560/sunshine-coast">FuelRadar — Sunshine Coast</a></td>
+          </tr>
+          <tr>
+            <td>SEQ blended proxy</td>
+            <td>231.5 c/L</td>
+            <td>Simple average of Brisbane, Gold Coast and Sunshine Coast; not an official government series</td>
+            <td>Derived from the three FuelRadar readings above</td>
+          </tr>
+          <tr>
+            <td>Brisbane average terminal gate price (ULP)</td>
+            <td>194.2 c/L</td>
+            <td>Latest visible AIP average</td>
+            <td><a href="https://www.aip.com.au/pricing/terminal-gate-prices">AIP terminal gate prices</a></td>
+          </tr>
+          <tr>
+            <td>Retail–wholesale spread</td>
+            <td>36.3 c/L</td>
+            <td>Useful indicator of market stress / pricing pressure</td>
+            <td>Derived from Brisbane retail minus Brisbane TGP</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section" id="flows">
+    <h2>4) What should be inferred from inflows?</h2>
+    <div class="panel">
+      <div class="tag tag-good">Yes — with caveats</div>
+      <p>For a practical domestic fuel-security report, <strong>inbound product and crude movements</strong> are more useful than national export flows. That said, Australia still exports hydrocarbons such as <strong>crude oil / condensate</strong> and <strong>LNG</strong>, so “inflow only” is not literally correct at the national level.</p>
+      <p>The best operational monitoring stack is therefore:</p>
+      <ol>
+        <li><strong>Official weekly national stock data</strong> for petrol, diesel, and jet fuel.</li>
+        <li><strong>Daily inbound and coastal tanker movements</strong> into fuel-relevant ports.</li>
+        <li><strong>Refinery / terminal signals</strong>, especially Lytton for Brisbane.</li>
+        <li><strong>Retail and wholesale price behavior</strong> as a same-day stress indicator.</li>
+      </ol>
+      <p class="small">That gives you a defensible <strong>direction-of-travel estimate</strong> for Brisbane / Queensland supply tightness even without public daily storage data.</p>
+    </div>
+  </div>
+
+  <div class="section" id="appendix">
+    <h2>5) Rolling 30-day observed tanker arrivals appendix</h2>
+    <p class="muted">This appendix is designed for <strong>verifiability</strong>. Each row has a detail link. It remains an <strong>observed public-record table</strong>, not an official full census.</p>
+
+    <h3>Queensland observed arrivals</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Port</th><th>Vessel</th><th>Tanker type</th><th>Detail link</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2026-02-28</td><td>Townsville</td><td>THERESA MICRONESIA</td><td>Oil/Chemical tanker</td><td><a href="https://www.myshiptracking.com/vessels/theresa-micronesia-mmsi-477938600-imo-9317250">MyShipTracking</a></td></tr>
+          <tr><td>2026-03-01</td><td>Townsville</td><td>GOLDEN CHIE</td><td>Chemical/Oil Products tanker</td><td><a href="https://www.myshiptracking.com/vessels/golden-chie-mmsi-356360000-imo-9566203">MyShipTracking</a></td></tr>
+          <tr><td>2026-03-01</td><td>Brisbane</td><td>GOLDEN ACE</td><td>Tanker</td><td><a href="https://www.myshiptracking.com/vessels/golden-ace-mmsi-477548800-imo-">MyShipTracking</a></td></tr>
+          <tr><td>2026-03-04</td><td>Brisbane</td><td>GOLDEN CHIE</td><td>Chemical/Oil Products tanker</td><td><a href="https://www.myshiptracking.com/vessels/golden-chie-mmsi-356360000-imo-9566203">MyShipTracking</a></td></tr>
+          <tr><td>2026-03-08</td><td>Gladstone</td><td>TOPAZ EXPRESS</td><td>Oil Products tanker</td><td><a href="https://www.myshiptracking.com/vessels/topaz-express-mmsi-477698500-imo-9552800">MyShipTracking</a></td></tr>
+          <tr><td>2026-03-10</td><td>Mackay</td><td>TOPAZ EXPRESS</td><td>Oil Products tanker</td><td><a href="https://www.myshiptracking.com/vessels/topaz-express-mmsi-477698500-imo-9552800">MyShipTracking</a></td></tr>
+          <tr><td>2026-03-17</td><td>Gladstone</td><td>GASCHEM HOMER</td><td>LPG tanker</td><td><a href="https://www.vesselfinder.com/ports/AUGLT001">VesselFinder port page</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Rest of Australia observed arrivals</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Port</th><th>Vessel</th><th>Tanker type</th><th>Detail link</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>2026-03-05</td><td>Botany</td><td>GOLDEN ACE</td><td>Tanker</td><td><a href="https://www.myshiptracking.com/vessels/golden-ace-mmsi-477548800-imo-">MyShipTracking</a></td></tr>
+          <tr><td>2026-03-06</td><td>Port Kembla</td><td>GOLDEN CHIE</td><td>Chemical/Oil Products tanker</td><td><a href="https://www.myshiptracking.com/vessels/golden-chie-mmsi-356360000-imo-9566203">MyShipTracking</a></td></tr>
+          <tr><td>2026-03-10</td><td>Melbourne</td><td>THERESA MICRONESIA</td><td>Oil/Chemical tanker</td><td><a href="https://www.myshiptracking.com/vessels/theresa-micronesia-mmsi-477938600-imo-9317250">MyShipTracking</a></td></tr>
+          <tr><td>2026-03-17</td><td>Melbourne</td><td>CL XUNYANG</td><td>Chemical/Oil Products tanker</td><td><a href="https://www.vesselfinder.com/ports/AUMEL001">VesselFinder port page</a></td></tr>
+          <tr><td>2026-03-17</td><td>Adelaide</td><td>ARDMORE_GIBRALTAR</td><td>Chemical/Oil Products tanker</td><td><a href="https://www.vesselfinder.com/ports/AUADL001">VesselFinder port page</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Weekly summary from the observed appendix</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Week</th><th>Queensland</th><th>Rest of Australia</th><th>Observed total</th><th>Comment</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>24 Feb–2 Mar</td><td>3</td><td>0</td><td>3</td><td>Queensland-heavy observed week</td></tr>
+          <tr><td>3 Mar–9 Mar</td><td>3</td><td>2</td><td>5</td><td>Broad national activity visible</td></tr>
+          <tr><td>10 Mar–16 Mar</td><td>1</td><td>1</td><td>2</td><td>Lighter observed week</td></tr>
+          <tr><td>17 Mar–18 Mar</td><td>1</td><td>2</td><td>3</td><td>Partial week already active</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section" id="method">
+    <h2>6) Method and caveats</h2>
+    <div class="panel">
+      <ul>
+        <li><strong>Official national stock data is weekly only.</strong> Public daily local-inventory data for Brisbane was not identified.</li>
+        <li><strong>The tanker appendix is a proxy dataset.</strong> It is best interpreted as a change-detection layer rather than a full harbor-master ledger.</li>
+        <li><strong>AIS sites are informational.</strong> Public vessel-tracking platforms explicitly note that their movement data is AIS-derived and not an official record.</li>
+        <li><strong>Best use case:</strong> this report is strongest as an internal <strong>situational-awareness brief</strong> for leaders who need an evidence-based daily snapshot.</li>
+        <li><strong>Best future upgrade:</strong> keep the tanker appendix in a maintained dataset so the daily version can compare against a richer multi-week baseline by port and tanker class.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot">
+    Generated as a <strong>share-ready HTML snapshot</strong> for internal circulation. Suitable for email attachment, Teams, SharePoint, or OneDrive. This file is static and does not auto-refresh; a new snapshot should replace it when the next daily report is generated.
+  </div>
+</div>
+</body>
+</html>
