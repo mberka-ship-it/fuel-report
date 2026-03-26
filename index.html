@@ -3,323 +3,192 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Australia Fuel Security Brief — 24 March 2026</title>
+<title>Australia Fuel Security Brief — 26 March 2026</title>
 <style>
-  :root{
-    --bg:#f6f7fb; --card:#ffffff; --ink:#1f2937; --muted:#6b7280; --line:#dbe2ea;
-    --accent:#0f766e; --accent2:#1d4ed8; --warn:#92400e; --bad:#991b1b; --good:#166534;
-  }
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;}
-  .wrap{max-width:1180px;margin:0 auto;padding:24px;}
-  .hero{background:linear-gradient(135deg,#0b3b5c,#0f766e);color:#fff;border-radius:20px;padding:28px 30px;box-shadow:0 10px 30px rgba(0,0,0,.12);}
-  .hero h1{margin:0 0 8px 0;font-size:34px;line-height:1.15}
-  .hero p{margin:6px 0;color:#e6f3f1}
-  .small{font-size:13px;color:#d7ece8}
-  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
-  .stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px}
-  .stat .k{font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:#d8f3ee}
-  .stat .v{font-size:26px;font-weight:700;margin-top:4px}
-  .section{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;margin-top:18px;box-shadow:0 4px 12px rgba(0,0,0,.04)}
-  h2{margin:0 0 12px;font-size:24px}
-  h3{margin:18px 0 8px;font-size:18px}
-  p{margin:10px 0}
-  ul{margin:8px 0 8px 20px}
-  li{margin:6px 0}
-  .pill{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:700}
-  .pill.good{background:#ecfdf5;color:var(--good);border:1px solid #bbf7d0}
-  .pill.warn{background:#fffbeb;color:var(--warn);border:1px solid #fde68a}
-  .pill.bad{background:#fef2f2;color:var(--bad);border:1px solid #fecaca}
-  .callout{border-left:5px solid var(--accent);background:#f0fdfa;padding:14px 16px;border-radius:12px;margin:12px 0}
-  table{width:100%;border-collapse:collapse;margin-top:10px}
-  th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
-  th{background:#f8fafc;font-size:13px}
-  .muted{color:var(--muted)}
-  .two{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
-  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .note{font-size:13px;color:var(--muted)}
-  .footnotes ol{padding-left:18px}
-  .footnotes li{margin:8px 0}
-  a{color:var(--accent2);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .score{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
-  .score .box{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fafafa}
-  .score .box strong{display:block;font-size:14px;margin-bottom:6px}
-  .tag{font-size:12px;font-weight:700;border-radius:999px;padding:3px 8px;display:inline-block}
-  .tag.pos{background:#ecfdf5;color:#166534}
-  .tag.neg{background:#fef2f2;color:#991b1b}
-  .tag.neu{background:#eff6ff;color:#1d4ed8}
-  @media (max-width: 980px){.grid,.score,.three,.two{grid-template-columns:1fr}.hero h1{font-size:28px}}
-  @media print{body{background:#fff}.hero,.section{box-shadow:none}a{text-decoration:none;color:#000}}
+body{font-family:Arial,sans-serif;background:#f5f7fb;color:#1f2937;margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding:24px}
+.hero{background:linear-gradient(135deg,#0b3b5c,#0f766e);color:#fff;border-radius:20px;padding:28px}
+.hero h1{margin:0 0 8px 0;font-size:34px}
+.hero p{margin:6px 0;color:#e8f7f4}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
+.stat{background:rgba(255,255,255,.12);border-radius:14px;padding:12px}
+.stat .k{font-size:12px;text-transform:uppercase;color:#d8f3ee}
+.stat .v{font-size:26px;font-weight:700;margin-top:4px}
+.section{background:#fff;border:1px solid #dbe3ee;border-radius:16px;padding:20px;margin-top:18px}
+h2{margin:0 0 10px 0}
+h3{margin:16px 0 8px 0}
+table{width:100%;border-collapse:collapse;margin-top:8px}
+th,td{border-bottom:1px solid #dbe3ee;padding:8px 10px;text-align:left;vertical-align:top}
+th{background:#f8fafc;font-size:13px}
+.callout{border-left:5px solid #0f766e;background:#f0fdfa;padding:12px 14px;border-radius:12px}
+.note{font-size:13px;color:#6b7280}
+.score{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.box{border:1px solid #dbe3ee;border-radius:12px;padding:12px;background:#fafafa}
+.tag{font-size:12px;font-weight:700;border-radius:999px;padding:3px 8px;display:inline-block}
+.neu{background:#eff6ff;color:#1d4ed8}.neg{background:#fef2f2;color:#991b1b}
+a{color:#1d4ed8;text-decoration:none} a:hover{text-decoration:underline}
+@media (max-width:900px){.grid,.score{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="hero">
-    <h1>Australia Fuel Security Brief</h1>
-    <p><strong>Updated:</strong> Tuesday, 24 March 2026 (Australia/Brisbane)</p>
-    <p>Share-ready snapshot focused on Australia-wide official stocks, Queensland/Brisbane supply proxies, tanker flows, and current retail/wholesale price stress.</p>
-    <p class="small">Important: official stockholding data is weekly; daily Brisbane/Queensland “reserve” levels are not publicly published. This brief therefore separates <strong>official measured stocks</strong> from <strong>daily proxy indicators</strong>.</p>
-    <div class="grid">
-      <div class="stat"><div class="k">Official petrol cover</div><div class="v">38 days</div></div>
-      <div class="stat"><div class="k">Official jet cover</div><div class="v">29 days</div></div>
-      <div class="stat"><div class="k">Official diesel cover</div><div class="v">32 days</div></div>
-      <div class="stat"><div class="k">Brisbane ULP91 today</div><div class="v">246 c/L</div></div>
-    </div>
-  </div>
+<div class="hero">
+<h1>Australia Fuel Security Brief</h1>
+<p><strong>Updated:</strong> Thursday, 26 March 2026 (Australia/Brisbane)</p>
+<p>Share-ready briefing on official Australian fuel stocks, Queensland and Brisbane supply proxies, tanker activity, and current retail and wholesale price stress.</p>
+<div class="grid">
+<div class="stat"><div class="k">Official petrol cover</div><div class="v">38 days</div></div>
+<div class="stat"><div class="k">Official jet cover</div><div class="v">29 days</div></div>
+<div class="stat"><div class="k">Official diesel cover</div><div class="v">32 days</div></div>
+<div class="stat"><div class="k">Brisbane ULP91</div><div class="v">252 c/L</div></div>
+</div>
+</div>
 
-  <div class="section">
-    <h2>Executive judgment</h2>
-    <div class="callout">
-      <strong>Bottom line:</strong> Australia’s latest official stock data still shows fuel holdings above the Minimum Stockholding Obligation, and live Queensland tanker/refinery signals do <em>not</em> point to an immediate physical break in supply. However, forward import risk has worsened, retail and wholesale prices are still climbing, and the market remains tight at the distribution layer.
-    </div>
-    <div class="score">
-      <div class="box"><strong>Official stocks</strong><span class="tag neu">Stable</span><div class="muted">No newer weekly release yet; latest official figures remain above MSO.</div></div>
-      <div class="box"><strong>Queensland physical flow</strong><span class="tag neu">Tight but flowing</span><div class="muted">Brisbane and other Queensland ports still show tanker activity and live expected calls.</div></div>
-      <div class="box"><strong>Forward import risk</strong><span class="tag neg">Worse</span><div class="muted">Six Australia-bound fuel cargoes due after mid-April were cancelled or deferred.</div></div>
-      <div class="box"><strong>Consumer market stress</strong><span class="tag neg">Severe</span><div class="muted">Brisbane ULP91 and diesel are both at record monitored highs on the live pricing feed.</div></div>
-    </div>
-  </div>
+<div class="section">
+<h2>Executive judgment</h2>
+<div class="callout"><strong>Bottom line:</strong> Australia's official published stock figures still show fuel holdings above the legal minimum. The live Queensland port picture still shows tanker activity and refinery support, so there is no clear evidence of an immediate physical break in supply. The strain is instead showing up in forward import risk, tight distribution, and very high retail and wholesale prices.</div>
+<div class="score">
+<div class="box"><strong>Official stocks</strong><br><span class="tag neu">Stable</span><div class="note">Latest published official values remain above the MSO floor.</div></div>
+<div class="box"><strong>Queensland physical flow</strong><br><span class="tag neu">Tight but flowing</span><div class="note">Brisbane, Gladstone and Townsville still show active vessel movements.</div></div>
+<div class="box"><strong>Forward import risk</strong><br><span class="tag neg">Worse than normal</span><div class="note">Six Australia-bound cargoes due after mid-April were cancelled or deferred.</div></div>
+<div class="box"><strong>Consumer market stress</strong><br><span class="tag neg">Severe</span><div class="note">Brisbane and broader SEQ prices remain at or near current monitored peaks.</div></div>
+</div>
+</div>
 
-  <div class="section">
-    <h2>What changed since yesterday</h2>
-    <ul>
-      <li><strong>No newer official weekly stock release</strong> has appeared. DCCEEW’s MSO statistics page still shows <strong>Last updated: 17 March 2026</strong>. The latest formal national position remains <strong>1,631 ML petrol / 38 days</strong>, <strong>790 ML jet fuel / 29 days</strong>, and <strong>2,905 ML diesel / 32 days</strong>.</li>
-      <li><strong>Retail stress worsened again in Brisbane.</strong> FuelPrice Australia’s current Brisbane ULP91 page now shows <strong>$2.46/L</strong>, up from <strong>$2.42/L yesterday</strong>. Brisbane diesel is <strong>$2.96/L</strong>.</li>
-      <li><strong>Forward risk remains the main deterioration.</strong> The latest public government confirmation is still that <strong>six fuel shipments due after mid-April were cancelled or deferred</strong>, although most expected cargoes are still scheduled and the government says supply remains secure.</li>
-      <li><strong>Queensland live tanker signals remain active.</strong> Brisbane’s live AIS-based port page shows <strong>38 arrivals in the past 24 hours</strong> and <strong>42 expected in the next 30 days</strong>. Gladstone shows <strong>10 arrivals in the past 24 hours</strong> and <strong>48 expected in the next 30 days</strong>.</li>
-    </ul>
-  </div>
+<div class="section">
+<h2>What changed since the last brief</h2>
+<ul>
+<li><strong>No new official stock values are visible yet.</strong> DCCEEW's MSO statistics page was updated on 26 March 2026, but the explicit numbers still shown in the page text remain the December quarter 2025 averages.</li>
+<li><strong>Retail prices are still moving up.</strong> FuelPrice Australia currently shows Brisbane ULP91 at <strong>$2.52/L</strong> and Brisbane diesel at <strong>$3.10/L</strong>. Gold Coast ULP91 is <strong>$2.51/L</strong>, Sunshine Coast <strong>$2.53/L</strong>, and Ipswich <strong>$2.49/L</strong>.</li>
+<li><strong>Wholesale prices are also elevated.</strong> Viva's Brisbane terminal gate page shows <strong>245.93 c/L ULP</strong> and <strong>309.69 c/L diesel</strong>; United's Brisbane table shows <strong>238.42 c/L ULP</strong> and <strong>303.49 c/L diesel</strong>.</li>
+<li><strong>Queensland port traffic remains active.</strong> Brisbane currently shows <strong>37 arrivals in the past 24 hours</strong> and <strong>43 expected in the next 30 days</strong>. Gladstone shows <strong>25 arrivals in the past 24 hours</strong> and <strong>44 expected in the next 30 days</strong>. Townsville shows <strong>18 arrivals in the past 24 hours</strong> and <strong>4 expected in the next 30 days</strong>.</li>
+</ul>
+</div>
 
-  <div class="section">
-    <h2>1) Official national reserve levels (latest available)</h2>
-    <p>The strongest hard data remains DCCEEW’s Minimum Stockholding Obligation (MSO) statistics. As of the latest published release, industry-held stocks remain above the mandated floor.</p>
-    <table>
-      <thead><tr><th>Fuel</th><th>Official volume</th><th>Official days of cover</th><th>MSO requirement</th><th>Above MSO</th></tr></thead>
-      <tbody>
-        <tr><td>Petrol / gasoline</td><td>1,631 ML</td><td>38 days</td><td>1,067 ML</td><td>53%</td></tr>
-        <tr><td>Jet fuel / kerosene</td><td>790 ML</td><td>29 days</td><td>663 ML</td><td>19%</td></tr>
-        <tr><td>Diesel</td><td>2,905 ML</td><td>32 days</td><td>2,742 ML</td><td>6%</td></tr>
-      </tbody>
-    </table>
-    <p class="note">These figures are official, but they are <strong>weekly/quarterly reporting artifacts</strong>, not live daily tank-gauge data. DCCEEW says stocks are reported weekly, with Tuesday stocks due Friday.</p>
-  </div>
+<div class="section">
+<h2>1) Official national reserve levels</h2>
+<p>DCCEEW's latest accessible published values remain the December quarter 2025 average stocks held under the Minimum Stockholding Obligation.</p>
+<table>
+<thead><tr><th>Fuel</th><th>Official volume</th><th>Official days of cover</th><th>MSO requirement</th><th>Position vs MSO</th></tr></thead>
+<tbody>
+<tr><td>Petrol / gasoline</td><td>1,631 ML</td><td>38 days</td><td>1,067 ML</td><td>53% above</td></tr>
+<tr><td>Jet fuel / kerosene</td><td>790 ML</td><td>29 days</td><td>663 ML</td><td>19% above</td></tr>
+<tr><td>Diesel</td><td>2,905 ML</td><td>32 days</td><td>2,742 ML</td><td>6% above</td></tr>
+</tbody>
+</table>
+<p class="note">These are official compliance values, not live daily tank-gauge readings.</p>
+</div>
 
-  <div class="section">
-    <h2>2) Government actions and policy settings</h2>
-    <div class="three">
-      <div>
-        <h3>MSO drawdown</h3>
-        <p>Up to <strong>20% of the petrol and diesel MSO</strong> has been temporarily released, equal to up to <strong>762 million litres</strong>, under the Fuel Security (Temporary Reduction–Securing Regional Supply) Instrument 2026.</p>
-      </div>
-      <div>
-        <h3>Fuel-quality waiver</h3>
-        <p>The temporary fuel-quality change remains active. Government statements say it should add roughly <strong>100 million litres per month</strong> of additional petrol supply.</p>
-      </div>
-      <div>
-        <h3>Refinery support</h3>
-        <p>On 20 March, the government said it would amend the <strong>Fuel Security Services Payment</strong>. The same release says <strong>Ampol has confidence to maintain full production and defer planned maintenance</strong>.</p>
-      </div>
-    </div>
-    <p>That refinery-support change matters disproportionately for Queensland because Ampol’s Lytton refinery is Brisbane’s key onshore fuel-security asset. The government’s 20 March release also states that Ampol Brisbane and Viva Geelong together produced <strong>12 billion litres</strong> of petrol, diesel and jet fuel in 2025—about <strong>20% of annual Australian needs</strong>—and says the government has already expanded diesel storage nationally to <strong>over 3.7 billion litres across more than 90 diesel terminals</strong>.</p>
-  </div>
+<div class="section">
+<h2>2) Government actions and policy settings</h2>
+<ul>
+<li><strong>MSO release:</strong> up to 20% of the petrol and diesel MSO has been released, making up to 762 million litres available to the market.</li>
+<li><strong>Fuel-quality waiver:</strong> the temporary fuel-quality measure remains part of the response and Government statements say it should add about 100 million litres per month of extra petrol supply.</li>
+<li><strong>Refinery support:</strong> the Fuel Security Services Payment settings were adjusted on 20 March. The Government says this supports continued operation at Lytton and Geelong.</li>
+<li><strong>Operationalised release:</strong> on 20 March Minister Bowen said more than 500 million litres had already been approved for release and that the two refineries were working full pelt.</li>
+</ul>
+</div>
 
-  <div class="section">
-    <h2>3) Inflows and outflows relevant to Australia and Queensland</h2>
-    <div class="two">
-      <div>
-        <h3>Official reference</h3>
-        <p>Queensland’s official public vessel-movement gateway is <strong>QSHIPS</strong>. The public landing page is open and Maritime Safety Queensland directs users there for port movement information. For this brief, I use QSHIPS/MSQ as the official reference point and AIS-based public trackers for vessel-level detail.</p>
-        <h3>Queensland live flow snapshot</h3>
-        <ul>
-          <li><strong>Brisbane:</strong> 38 arrivals in the past 24 hours; 42 expected in the next 30 days. Current tanker names visible in port include <strong>UNITY VENTURE</strong>, <strong>CL PEARL BUCK</strong>, and <strong>GRAND WINNER 6</strong>.</li>
-          <li><strong>Gladstone:</strong> 10 arrivals in the past 24 hours; 48 expected in the next 30 days. The live page shows <strong>LNG FUKUROKUJU</strong> and <strong>BW PAVILION VANDA</strong> in port, and <strong>MANOLATES</strong> expected.</li>
-          <li><strong>Townsville:</strong> 20 arrivals in the past 24 hours; 7 expected in the next 30 days. The live page lists <strong>STENA CONTINENT</strong> and <strong>ATLANTIC T</strong> as expected and shows <strong>GOLDEN LEADER</strong> in port.</li>
-          <li><strong>Mackay:</strong> the recent-arrivals list shows <strong>ARDMORE SEALION</strong> as a chemical/oil products tanker arriving on <strong>20 March</strong>.</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Interpretation</h3>
-        <p><span class="pill warn">Proxy only</span></p>
-        <p>These ship-movement signals are useful for direction, not inventory measurement. A tanker in port does <em>not</em> prove quantity unloaded, destination within Australia, or net stock change.</p>
-        <p>Still, the live port picture does <strong>not</strong> look like a collapse in physical inflows. The more material deterioration remains in the <strong>forward import pipeline</strong>: six Australia-bound fuel cargoes due after mid-April have been cancelled or deferred, even though around 74 others are still expected.</p>
-        <p>Internationally, Reuters reports European and U.S. gasoline cargoes are now heading to Asia, Asian gasoline margins have surged, and Saudi Aramco is supplying April term customers from <strong>Yanbu</strong> on the Red Sea rather than through Hormuz-exposed routes. That external backdrop is consistent with higher Australian replenishment costs and tighter prompt supply.</p>
-      </div>
-    </div>
-  </div>
+<div class="section">
+<h2>3) Inflows and outflows relevant to Australia and Queensland</h2>
+<p><strong>Official reference:</strong> QSHIPS remains the official public gateway for Queensland ship movements.</p>
+<p><strong>Live Queensland proxy snapshot:</strong></p>
+<ul>
+<li><strong>Brisbane:</strong> 37 arrivals in the past 24 hours; 43 expected in the next 30 days; 115 ships in port. Tanker names currently visible include <strong>UNITY VENTURE</strong>, <strong>GRAND WINNER 5</strong> and <strong>FOREVER DELIGHT</strong>. <strong>CL PEARL BUCK</strong> appears as a recent departure and <strong>CHEM BARIUM</strong> as an expected arrival later today.</li>
+<li><strong>Gladstone:</strong> 25 arrivals in the past 24 hours; 44 expected in the next 30 days; 97 ships in port.</li>
+<li><strong>Townsville:</strong> 18 arrivals in the past 24 hours; 4 expected in the next 30 days; 32 ships in port.</li>
+<li><strong>Mackay:</strong> no arrivals in the prior 24 hours on the current page, but the recent-arrivals list still shows <strong>ARDMORE SEALION</strong> arriving on 20 March and departing on 21 March.</li>
+</ul>
+<p class="note">These are AIS-based public movement signals. They are useful for direction, but they do not directly measure litres discharged into local storage.</p>
+</div>
 
-  <div class="section">
-    <h2>4) Brisbane and Queensland storage / supply specifics</h2>
-    <p>There is still <strong>no official public daily Brisbane reserve series</strong>. The most concrete public Queensland supply datapoints are structural rather than live:</p>
-    <ul>
-      <li>Maritime Safety Queensland’s Brisbane port procedures state that Brisbane has <strong>an oil refinery and multiple bulk liquid terminals</strong>, and that <strong>crude oil is one of the port’s principal imports</strong>.</li>
-      <li>The government’s 20 March fuel-sovereignty release says Ampol Brisbane is maintaining full production and deferring maintenance.</li>
-      <li>IOR’s Lytton Terminal (a previously verified local storage asset) remains a useful capacity anchor for Brisbane, but it is <em>not</em> a live inventory feed.</li>
-    </ul>
-    <div class="callout">
-      <strong>Analytical read:</strong> Queensland looks better on <em>production resilience</em> than on <em>distribution comfort</em>. Lytton support and active port calls are positives; the absence of daily public inventory data means any Brisbane stock call must remain probabilistic, not exact.
-    </div>
-  </div>
+<div class="section">
+<h2>4) Brisbane and Queensland storage / supply specifics</h2>
+<ul>
+<li>MSQ's Brisbane port procedures say Brisbane has <strong>an oil refinery and multiple bulk liquid terminals</strong>, and that <strong>crude oil is one of the port's principal imports</strong>.</li>
+<li>IOR says its <strong>Lytton Terminal</strong> is a <strong>110 ML diesel import and storage facility</strong> providing up to <strong>12 additional days of supply storage</strong> into the Brisbane market.</li>
+<li>Minister Bowen's 20 March Brisbane press conference emphasised that the legal stock obligation is designed to hold stock here in Australia, including Brisbane.</li>
+</ul>
+<div class="callout"><strong>Analytical read:</strong> Queensland remains better positioned than an import-only region because it has both Lytton refining and Port of Brisbane bulk-liquid infrastructure. But because daily inventory is not public, any Brisbane stock call must remain probabilistic rather than exact.</div>
+</div>
 
-  <div class="section">
-    <h2>5) Prices today: retail and wholesale</h2>
-    <div class="two">
-      <div>
-        <h3>Retail ULP91 and diesel</h3>
-        <table>
-          <thead><tr><th>Location</th><th>ULP91</th><th>Diesel</th><th>Signal</th></tr></thead>
-          <tbody>
-            <tr><td>Brisbane</td><td><strong>$2.46/L</strong></td><td><strong>$2.96/L</strong></td><td>Both at highest peak since monitoring began</td></tr>
-            <tr><td>Gold Coast</td><td>$2.41/L</td><td>$2.94/L</td><td>Holding at current peak</td></tr>
-            <tr><td>Sunshine Coast</td><td>$2.44/L</td><td>$2.96/L</td><td>Holding at current peak</td></tr>
-            <tr><td>Ipswich</td><td>$2.41/L</td><td>n/a on current page used</td><td>Holding at current peak</td></tr>
-            <tr><td><strong>SEQ proxy average</strong></td><td><strong>$2.43/L</strong></td><td>—</td><td>Simple unweighted average of Brisbane, Gold Coast, Sunshine Coast, Ipswich</td></tr>
-          </tbody>
-        </table>
-        <p class="note">The live Queensland retail figures above come from FuelPrice Australia pages fed by data under Queensland’s fuel-price reporting arrangements. They are the most current public retail indicators I could verify today.</p>
-      </div>
-      <div>
-        <h3>Wholesale / terminal gate prices</h3>
-        <table>
-          <thead><tr><th>Source</th><th>Brisbane ULP</th><th>Brisbane diesel</th><th>As at</th></tr></thead>
-          <tbody>
-            <tr><td>Viva Energy TGP</td><td>244.27 c/L</td><td>294.39 c/L</td><td>25 Mar 2026 posting</td></tr>
-            <tr><td>United TGP</td><td>233.21 c/L</td><td>287.28 c/L</td><td>24 Mar 2026</td></tr>
-            <tr><td>United wholesale list price</td><td>241.28 c/L</td><td>302.73 c/L</td><td>24 Mar 2026</td></tr>
-            <tr><td>AIP average TGP page</td><td class="muted">Current-day page available, but latest downloadable historical file is dated 20 Mar 2026</td><td class="muted">Average across BP, Ampol, Viva, ExxonMobil</td><td>20 Mar 2026 dataset</td></tr>
-          </tbody>
-        </table>
-        <p class="note">Retail is now more expensive than many current terminal postings because it also reflects lagged replacement cost expectations, local competition effects, and scarcity pricing at the distribution layer.</p>
-      </div>
-    </div>
-  </div>
+<div class="section">
+<h2>5) Prices today: retail and wholesale</h2>
+<table>
+<thead><tr><th>Location / source</th><th>ULP91</th><th>Diesel</th><th>Comment</th></tr></thead>
+<tbody>
+<tr><td>Brisbane retail</td><td><strong>$2.52/L</strong></td><td><strong>$3.10/L</strong></td><td>FuelPrice Australia says both are at the highest level since monitoring began.</td></tr>
+<tr><td>Gold Coast retail</td><td>$2.51/L</td><td>$3.10/L</td><td>Still at current peak pricing.</td></tr>
+<tr><td>Sunshine Coast retail</td><td>$2.53/L</td><td>$3.12/L</td><td>Still at current peak pricing.</td></tr>
+<tr><td>Ipswich retail</td><td>$2.49/L</td><td>—</td><td>ULP91 still at current peak pricing.</td></tr>
+<tr><td>Simple SEQ ULP91 proxy</td><td><strong>$2.51/L</strong></td><td>—</td><td>Unweighted average of Brisbane, Gold Coast, Sunshine Coast and Ipswich.</td></tr>
+<tr><td>Viva Brisbane TGP</td><td>245.93 c/L</td><td>309.69 c/L</td><td>Page text shows values as at 27 Mar 2026.</td></tr>
+<tr><td>United Brisbane TGP</td><td>238.42 c/L</td><td>303.49 c/L</td><td>Current public terminal table.</td></tr>
+</tbody>
+</table>
+<p class="note">ACCC says some retailers have moved to replacement-cost pricing rather than pricing only off existing storage cost. That helps explain why pump prices have moved so aggressively alongside wholesale expectations.</p>
+</div>
 
-  <div class="section">
-    <h2>Deep analysis</h2>
-    <h3>A. Official stocks are not the current acute problem</h3>
-    <p>The latest official stock data remains above the MSO floor for all three key products. That means today’s most visible pain is not being driven by a documented collapse in nationally measured tank inventories.</p>
+<div class="section">
+<h2>Deep analysis</h2>
+<p><strong>A.</strong> The official stock story and the lived-market story have separated. Official stocks remain above the legal floor, but that no longer explains the full market experience.</p>
+<p><strong>B.</strong> Today's problem is best described as <strong>tight but functioning</strong>. Queensland's live port picture still shows tanker activity, and Bowen said on 20 March that every expected delivery had arrived and that refineries were operating flat out.</p>
+<p><strong>C.</strong> The real deterioration is in the forward pipeline and replacement cost. The confirmed cancellation or deferral of six cargoes due after mid-April matters more than today's tanker list because it affects replenishment rather than current visible stock.</p>
+<p><strong>D.</strong> Retail prices are now telling the truth more loudly than the stock tables. Brisbane ULP91 at $2.52/L and diesel at $3.10/L, alongside similar Gold Coast and Sunshine Coast readings, point to a market under heavy replacement-cost and allocation pressure.</p>
+<p><strong>E.</strong> Near-term implication: physical availability likely remains adequate in aggregate, but prices and local distribution stress can still worsen before official stock tables show obvious deterioration.</p>
+<div class="callout"><strong>Most defensible one-line conclusion:</strong> Australia's official stocks remain above the legal floor; Queensland's physical flow proxies remain active; but forward replenishment risk and extreme pricing show the market is still tight, vulnerable, and expensive rather than comfortable.</div>
+</div>
 
-    <h3>B. The current problem is the gap between “fuel exists in the system” and “fuel is cheap and easy to access everywhere”</h3>
-    <p>That gap shows up clearly in today’s data. Queensland port activity remains live, Lytton has policy support to stay at full production, and the government continues to say supply is secure. But retail prices in Brisbane and across Southeast Queensland are at monitored record highs, and the ACCC has already authorised emergency operational coordination among major suppliers. That combination is characteristic of a market with <strong>tight prompt supply and stressed distribution</strong>, even when national stock figures remain formally adequate.</p>
+<div class="section">
+<h2>6) Rolling 30-day tanker-arrivals appendix (observed public sample)</h2>
+<p class="note">This is a dated observed sample from public vessel-history pages and live port snapshots. It is not a complete national ledger.</p>
+<table>
+<thead><tr><th>Date</th><th>Port</th><th>Vessel</th><th>Type</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr><td>28 Feb 2026</td><td>Townsville</td><td>THERESA MICRONESIA</td><td>Oil/Chemical tanker</td><td>Public vessel-history page</td></tr>
+<tr><td>1 Mar 2026</td><td>Townsville</td><td>GOLDEN CHIE</td><td>Oil/Chemical tanker</td><td>Public vessel-history page</td></tr>
+<tr><td>1 Mar 2026</td><td>Brisbane</td><td>FLAGSHIP IVY</td><td>Oil products tanker</td><td>Public vessel-history page</td></tr>
+<tr><td>4 Mar 2026</td><td>Brisbane</td><td>GOLDEN CHIE</td><td>Oil/Chemical tanker</td><td>Public vessel-history page</td></tr>
+<tr><td>8 Mar 2026</td><td>Gladstone</td><td>TOPAZ EXPRESS</td><td>Oil products tanker</td><td>Public vessel-history page</td></tr>
+<tr><td>10 Mar 2026</td><td>Mackay</td><td>TOPAZ EXPRESS</td><td>Oil products tanker</td><td>Public vessel-history page</td></tr>
+<tr><td>20 Mar 2026</td><td>Mackay</td><td>ARDMORE SEALION</td><td>Chemical/Oil products tanker</td><td>VesselFinder recent-arrivals page</td></tr>
+<tr><td>26 Mar 2026</td><td>Brisbane</td><td>CL PEARL BUCK</td><td>Chemical/Oil products tanker</td><td>Recent departure after in-port presence</td></tr>
+<tr><td>26 Mar 2026</td><td>Brisbane</td><td>CHEM BARIUM</td><td>Chemical/Oil products tanker</td><td>Expected-arrivals page</td></tr>
+</tbody>
+</table>
+<p><strong>Sample weekly baseline:</strong> the prior four full week-buckets in this public sample averaged roughly <strong>2.5 observed tanker arrivals per week nationally</strong>. The current partial week does not show a collapse in visible tanker activity.</p>
+</div>
 
-    <h3>C. Forward risk has worsened materially</h3>
-    <p>The six cancelled or deferred Australia-bound cargoes due after mid-April matter more than the current tanker picture because they hit the replenishment pipeline, not today’s headline stocks. Reuters also reports tighter Asian refining conditions, Saudi supply being rerouted through Yanbu, and more European/U.S. cargoes heading east. Those are classic signs that Australia’s replacement barrels are becoming more expensive and more operationally complicated to source.</p>
-
-    <h3>D. What this likely means over the next 1–3 weeks</h3>
-    <ul>
-      <li><strong>Physical availability:</strong> likely remains adequate in aggregate, especially in the large east-coast system, unless there is a second-wave escalation in cancellations or a refinery issue.</li>
-      <li><strong>Retail prices:</strong> likely remain elevated and could still move higher before stabilising.</li>
-      <li><strong>Regional / independent supply:</strong> remains the softest point of the system.</li>
-      <li><strong>Queensland:</strong> comparatively better placed than some regions because it has Lytton plus active import infrastructure, but not immune to allocation stress.</li>
-    </ul>
-
-    <div class="callout">
-      <strong>Best concise formulation:</strong> <em>Australia’s official stocks are stable; Queensland’s physical supply proxies are active; but forward import risk and live price behavior imply the market remains tight and vulnerable, not comfortable.</em>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>6) Rolling 30-day tanker-arrivals appendix</h2>
-    <p class="note">This appendix is intentionally conservative. It is a <strong>dated observed sample</strong> from currently accessible public vessel-history pages and live port snapshots. It is <strong>not</strong> a complete national ledger and should be used as a directional flow gauge only.</p>
-
-    <h3>Queensland observed arrivals (sample)</h3>
-    <table>
-      <thead><tr><th>Date</th><th>Port</th><th>Vessel</th><th>Type</th><th>Evidence</th></tr></thead>
-      <tbody>
-        <tr><td>20 Feb 2026</td><td>Gladstone</td><td>LNG FUKUROKUJU</td><td>LNG tanker</td><td>MyShipTracking last port calls</td></tr>
-        <tr><td>28 Feb 2026</td><td>Townsville</td><td>THERESA MICRONESIA</td><td>Oil/Chemical tanker</td><td>MyShipTracking last port calls</td></tr>
-        <tr><td>1 Mar 2026</td><td>Townsville</td><td>GOLDEN CHIE</td><td>Oil/Chemical tanker</td><td>MyShipTracking last port calls</td></tr>
-        <tr><td>1 Mar 2026</td><td>Brisbane</td><td>FLAGSHIP IVY</td><td>Oil products tanker</td><td>MyShipTracking last port calls</td></tr>
-        <tr><td>4 Mar 2026</td><td>Brisbane</td><td>GOLDEN CHIE</td><td>Oil/Chemical tanker</td><td>MyShipTracking last port calls</td></tr>
-        <tr><td>8 Mar 2026</td><td>Gladstone</td><td>TOPAZ EXPRESS</td><td>Oil products tanker</td><td>MyShipTracking last port calls</td></tr>
-        <tr><td>10 Mar 2026</td><td>Mackay</td><td>TOPAZ EXPRESS</td><td>Oil products tanker</td><td>MyShipTracking last port calls</td></tr>
-        <tr><td>18 Mar 2026</td><td>Gladstone</td><td>ARDMORE SEALION</td><td>Chemical/Oil products tanker</td><td>MyShipTracking last port calls</td></tr>
-        <tr><td>20 Mar 2026</td><td>Mackay</td><td>ARDMORE SEALION</td><td>Chemical/Oil products tanker</td><td>MyShipTracking last port calls</td></tr>
-        <tr><td>20 Mar 2026</td><td>Townsville</td><td>THERESA MICRONESIA</td><td>Oil/Chemical tanker</td><td>MyShipTracking last port calls</td></tr>
-        <tr><td>24 Mar 2026</td><td>Brisbane</td><td>GRAND WINNER 6</td><td>Chemical/Oil products tanker</td><td>VesselFinder recent arrivals</td></tr>
-      </tbody>
-    </table>
-
-    <h3>Rest of Australia observed arrivals (sample)</h3>
-    <table>
-      <thead><tr><th>Date</th><th>Port</th><th>Vessel</th><th>Type</th><th>Evidence</th></tr></thead>
-      <tbody>
-        <tr><td>25 Feb 2026</td><td>Botany</td><td>FLAGSHIP IVY</td><td>Oil products tanker</td><td>MyShipTracking last port calls</td></tr>
-        <tr><td>6 Mar 2026</td><td>Port Kembla</td><td>GOLDEN CHIE</td><td>Oil/Chemical tanker</td><td>MyShipTracking last port calls</td></tr>
-        <tr><td>10 Mar 2026</td><td>Melbourne</td><td>THERESA MICRONESIA</td><td>Oil/Chemical tanker</td><td>MyShipTracking last port calls</td></tr>
-        <tr><td>13 Mar 2026</td><td>Melbourne</td><td>GOLDEN CHIE</td><td>Oil/Chemical tanker</td><td>MyShipTracking last port calls</td></tr>
-        <tr><td>18 Mar 2026</td><td>Adelaide</td><td>GOLDEN CHIE</td><td>Oil/Chemical tanker</td><td>MyShipTracking last port calls</td></tr>
-      </tbody>
-    </table>
-
-    <h3>Current live tanker picture (not yet counted as arrivals unless dated above)</h3>
-    <table>
-      <thead><tr><th>Port</th><th>Live status</th><th>Detail</th></tr></thead>
-      <tbody>
-        <tr><td>Brisbane</td><td>In port / arrived</td><td>UNITY VENTURE in port; CL PEARL BUCK and GRAND WINNER 6 visible in port/recent arrivals on the live port page.</td></tr>
-        <tr><td>Gladstone</td><td>In port / expected</td><td>LNG FUKUROKUJU and BW PAVILION VANDA in port; MANOLATES expected.</td></tr>
-        <tr><td>Townsville</td><td>In port / expected</td><td>GOLDEN LEADER visible; STENA CONTINENT and ATLANTIC T expected later this week.</td></tr>
-        <tr><td>Kwinana</td><td>Expected</td><td>MARLIN LE HAVRE crude tanker expected 24 Mar; LI CHI crude tanker expected 28 Mar.</td></tr>
-        <tr><td>Geelong</td><td>Expected</td><td>DUCHESS OF DORIA oil products tanker expected 2 Apr.</td></tr>
-      </tbody>
-    </table>
-
-    <h3>Weekly summary count from the observed sample</h3>
-    <table>
-      <thead><tr><th>Week bucket</th><th>Queensland sample arrivals</th><th>Rest of Australia sample arrivals</th><th>Observed sample total</th></tr></thead>
-      <tbody>
-        <tr><td>17–23 Feb</td><td>1</td><td>0</td><td>1</td></tr>
-        <tr><td>24 Feb–2 Mar</td><td>3</td><td>1</td><td>4</td></tr>
-        <tr><td>3–9 Mar</td><td>2</td><td>1</td><td>3</td></tr>
-        <tr><td>10–16 Mar</td><td>1</td><td>2</td><td>3</td></tr>
-        <tr><td>17–23 Mar</td><td>3</td><td>1</td><td>4</td></tr>
-        <tr><td>24 Mar to time of update</td><td>1</td><td>0</td><td>1</td></tr>
-      </tbody>
-    </table>
-
-    <p><strong>Prior 4-week baseline (sample only):</strong> excluding the current partial week, the observed sample averaged about <strong>3.5 tanker arrivals per week nationally</strong>, split approximately <strong>2.25/week in Queensland</strong> and <strong>1.25/week elsewhere</strong>. On this limited sample, the latest completed week was <strong>roughly in line with baseline</strong>, not obviously below it.</p>
-  </div>
-
-  <div class="section footnotes">
-    <h2>Sources and verification links</h2>
-    <ol>
-      <li><a href="https://www.dcceew.gov.au/energy/security/australias-fuel-security/minimum-stockholding-obligation/statistics">DCCEEW — Minimum Stockholding Obligation statistics</a></li>
-      <li><a href="https://www.dcceew.gov.au/energy/security/australias-fuel-security/minimum-stockholding-obligation">DCCEEW — Minimum Stockholding Obligation (temporary reduction / 762 ML)</a></li>
-      <li><a href="https://minister.dcceew.gov.au/bowen/media-releases/securing-australias-fuel-sovereignty">Minister Bowen — Securing Australia’s fuel sovereignty (20 Mar 2026)</a></li>
-      <li><a href="https://minister.dcceew.gov.au/bowen/transcripts/press-conference-brisbane-qld">Minister Bowen — Press conference, Brisbane, QLD (20 Mar 2026)</a></li>
-      <li><a href="https://www.accc.gov.au/consumers/petrol-and-fuel/fuel-price-monitoring-during-the-current-middle-eastern-conflict">ACCC — Fuel price monitoring during the current Middle Eastern conflict</a></li>
-      <li><a href="https://www.accc.gov.au/media-release/accc-authorises-fuel-majors-to-coordinate-to-ensure-fuel-supplies-with-conditions">ACCC — Interim authorisation for supply coordination</a></li>
-      <li><a href="https://qships.tmr.qld.gov.au/webx/">QSHIPS public portal</a></li>
-      <li><a href="https://www.msq.qld.gov.au/shipping/shipping-movements">Maritime Safety Queensland — shipping movements</a></li>
-      <li><a href="https://www.msq.qld.gov.au/shipping/port-procedures/port-procedures-brisbane">MSQ — Brisbane port procedures</a></li>
-      <li><a href="https://www.vesselfinder.com/ports/AUBNE001">VesselFinder — Brisbane</a></li>
-      <li><a href="https://www.vesselfinder.com/ports/AUGLT001">VesselFinder — Gladstone</a></li>
-      <li><a href="https://www.vesselfinder.com/ports/AUTSV001">VesselFinder — Townsville</a></li>
-      <li><a href="https://www.vesselfinder.com/ports/AUMKY001">VesselFinder — Mackay</a></li>
-      <li><a href="https://www.vesselfinder.com/ports/AUGEX001">VesselFinder — Geelong</a></li>
-      <li><a href="https://www.vesselfinder.com/ports/AUKWI001">VesselFinder — Kwinana</a></li>
-      <li><a href="https://www.myshiptracking.com/vessels/theresa-micronesia-mmsi-477938600-imo-9317250">MyShipTracking — THERESA MICRONESIA</a></li>
-      <li><a href="https://www.myshiptracking.com/vessels/golden-chie-mmsi-356360000-imo-9566203">MyShipTracking — GOLDEN CHIE</a></li>
-      <li><a href="https://www.myshiptracking.com/vessels/flagship-ivy-mmsi-538004854-imo-9520869">MyShipTracking — FLAGSHIP IVY</a></li>
-      <li><a href="https://www.myshiptracking.com/vessels/topaz-express-mmsi-477698500-imo-9552800">MyShipTracking — TOPAZ EXPRESS</a></li>
-      <li><a href="https://www.myshiptracking.com/vessels/ardmore-sealion-mmsi-538006129-imo-9708203">MyShipTracking — ARDMORE SEALION</a></li>
-      <li><a href="https://www.myshiptracking.com/vessels/lng-fukurokuju-mmsi-311000365-imo-9666986">MyShipTracking — LNG FUKUROKUJU</a></li>
-      <li><a href="https://fuelprice.io/qld/brisbane/unleaded/">FuelPrice Australia — Brisbane ULP91</a></li>
-      <li><a href="https://fuelprice.io/qld/brisbane/diesel/">FuelPrice Australia — Brisbane diesel</a></li>
-      <li><a href="https://fuelprice.io/qld/gold-coast/unleaded/">FuelPrice Australia — Gold Coast ULP91</a></li>
-      <li><a href="https://fuelprice.io/qld/gold-coast/diesel/">FuelPrice Australia — Gold Coast diesel</a></li>
-      <li><a href="https://fuelprice.io/qld/sunshine-coast/unleaded/">FuelPrice Australia — Sunshine Coast ULP91</a></li>
-      <li><a href="https://fuelprice.io/qld/sunshine-coast/diesel/">FuelPrice Australia — Sunshine Coast diesel</a></li>
-      <li><a href="https://fuelprice.io/qld/ipswich/">FuelPrice Australia — Ipswich</a></li>
-      <li><a href="https://www.aip.com.au/pricing/terminal-gate-prices">AIP — Terminal Gate Prices</a></li>
-      <li><a href="https://www.vivaenergy.com.au/quick-links/terminal-gate-pricing">Viva Energy — Terminal Gate Pricing</a></li>
-      <li><a href="https://www.unitedpetroleum.com.au/terminal-gate-pricing-tgp/">United Petroleum — Terminal Gate Pricing</a></li>
-      <li><a href="https://www.unitedpetroleum.com.au/list-pricing/">United Petroleum — Wholesale List Pricing</a></li>
-      <li><a href="https://www.abc.net.au/news/2026-03-22/six-fuel-ships-cancelled-oil-supply-iran/106483424">ABC — six fuel ships cancelled or deferred</a></li>
-      <li><a href="https://www.reuters.com/business/energy/european-gasoline-heads-asia-iran-war-sparks-supply-fears-2026-03-23/">Reuters — European/U.S. gasoline flows to Asia</a></li>
-      <li><a href="https://www.reuters.com/business/energy/saudi-aramco-tells-buyers-lift-only-arab-light-crude-yanbu-april-2026-03-23/">Reuters — Aramco / Yanbu April supply</a></li>
-    </ol>
-    <p class="note">Prepared as a share-ready HTML snapshot. It is a point-in-time report, not a live dashboard.</p>
-  </div>
+<div class="section">
+<h2>Sources and verification links</h2>
+<ul>
+<li><a href="https://www.dcceew.gov.au/energy/security/australias-fuel-security/minimum-stockholding-obligation/statistics">DCCEEW — Minimum Stockholding Obligation statistics</a></li>
+<li><a href="https://www.dcceew.gov.au/energy/security/australias-fuel-security/minimum-stockholding-obligation">DCCEEW — Minimum Stockholding Obligation</a></li>
+<li><a href="https://minister.dcceew.gov.au/bowen/transcripts/press-conference-brisbane-qld">Minister Bowen — Press conference, Brisbane, QLD</a></li>
+<li><a href="https://minister.dcceew.gov.au/bowen/media-releases/securing-australias-fuel-sovereignty">Minister Bowen — Securing Australia's fuel sovereignty</a></li>
+<li><a href="https://www.accc.gov.au/media-release/accc-authorises-fuel-majors-to-coordinate-to-ensure-fuel-supplies-with-conditions">ACCC — interim authorisation for supply coordination</a></li>
+<li><a href="https://www.accc.gov.au/consumers/petrol-and-fuel/fuel-price-monitoring-during-the-current-middle-eastern-conflict">ACCC — weekly fuel price monitoring</a></li>
+<li><a href="https://www.abc.net.au/news/2026-03-22/six-fuel-ships-cancelled-oil-supply-iran/106483424">ABC — six fuel ships cancelled or deferred</a></li>
+<li><a href="https://qships.tmr.qld.gov.au/webx/">QSHIPS public portal</a></li>
+<li><a href="https://www.msq.qld.gov.au/shipping/port-procedures/port-procedures-brisbane">MSQ — Brisbane port procedures</a></li>
+<li><a href="https://www.ior.com.au/fuel-solutions/supply-and-trading/lytton-terminal/">IOR — Lytton Terminal</a></li>
+<li><a href="https://www.vesselfinder.com/ports/AUBNE001">VesselFinder — Brisbane</a></li>
+<li><a href="https://www.vesselfinder.com/ports/AUGLT001">VesselFinder — Gladstone</a></li>
+<li><a href="https://www.vesselfinder.com/ports/AUTSV001">VesselFinder — Townsville</a></li>
+<li><a href="https://www.vesselfinder.com/ports/AUMKY001">VesselFinder — Mackay</a></li>
+<li><a href="https://fuelprice.io/qld/brisbane/unleaded/">FuelPrice Australia — Brisbane ULP91</a></li>
+<li><a href="https://fuelprice.io/qld/brisbane/diesel/">FuelPrice Australia — Brisbane diesel</a></li>
+<li><a href="https://fuelprice.io/qld/gold-coast/unleaded/">FuelPrice Australia — Gold Coast ULP91</a></li>
+<li><a href="https://fuelprice.io/qld/gold-coast/diesel/">FuelPrice Australia — Gold Coast diesel</a></li>
+<li><a href="https://fuelprice.io/qld/sunshine-coast/unleaded/">FuelPrice Australia — Sunshine Coast ULP91</a></li>
+<li><a href="https://fuelprice.io/qld/sunshine-coast/">FuelPrice Australia — Sunshine Coast summary</a></li>
+<li><a href="https://fuelprice.io/qld/ipswich/">FuelPrice Australia — Ipswich</a></li>
+<li><a href="https://www.aip.com.au/pricing/terminal-gate-prices">AIP — Terminal Gate Prices</a></li>
+<li><a href="https://www.vivaenergy.com.au/quick-links/terminal-gate-pricing">Viva Energy — Terminal Gate Pricing</a></li>
+<li><a href="https://www.unitedpetroleum.com.au/terminal-gate-pricing-tgp/">United Petroleum — Terminal Gate Pricing</a></li>
+</ul>
+<p class="note">Prepared as a point-in-time HTML snapshot. It will not update itself after sharing.</p>
+</div>
 </div>
 </body>
 </html>
