@@ -1,0 +1,27 @@
+name: Refresh public fuel data
+
+on:
+  schedule:
+    - cron: "25 2 * * 6"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Refresh official snapshot
+        run: node scripts/update-data.mjs
+      - name: Commit changed data
+        run: |
+          git config user.name "fuel-report-bot"
+          git config user.email "fuel-report-bot@users.noreply.github.com"
+          git add data/snapshot.json
+          git diff --cached --quiet || git commit -m "data: refresh official fuel snapshot"
+          git push
