@@ -1,0 +1,150 @@
+{
+  "meta": {
+    "generatedAt": "2026-07-27T21:49:53.178Z",
+    "stockAsOf": "2026-07-21",
+    "flowAsOf": "2026-07-24",
+    "priceAsOf": "2026-07-22",
+    "apsAsOf": "2026-05-31",
+    "status": "Level 2 — Keep Australia moving",
+    "statusTone": "elevated"
+  },
+  "national": {
+    "coverDays": {
+      "petrol": 42,
+      "diesel": 38,
+      "jet": 32
+    },
+    "stocksML": {
+      "petrol": 1814,
+      "diesel": 3534,
+      "jet": 892
+    },
+    "priorWeek": {
+      "coverDays": {
+        "petrol": 46,
+        "diesel": 39,
+        "jet": 34
+      },
+      "stocksML": {
+        "petrol": 1979,
+        "diesel": 3590,
+        "jet": 932
+      }
+    },
+    "scheduledArrivalsBillionLitres": 3.1,
+    "domesticSupplySharePct": 20
+  },
+  "flows": {
+    "crudeTankers": 7,
+    "crudeEquivalentDays": 16,
+    "cleanProductTankers": 44,
+    "cleanProductEquivalentDays": 14,
+    "priorCleanProductTankers": 48,
+    "priorCleanProductEquivalentDays": 17
+  },
+  "prices": {
+    "brisbanePetrolAudPerL": 1.8,
+    "brisbaneDieselAudPerL": 2.17,
+    "brentUsdPerBarrel": 86,
+    "singaporeGasoilUsdPerBarrel": 152,
+    "brentVsPreConflictPct": 18,
+    "gasoilVsPreConflictPct": 71
+  },
+  "queensland": {
+    "retailSites": 1800,
+    "petrolStockouts": 10,
+    "dieselStockouts": 14,
+    "priorPetrolStockouts": 12,
+    "priorDieselStockouts": 21,
+    "annualDemandML": {
+      "petrol": 3223.2,
+      "diesel": 8817.2,
+      "jet": 2031.2
+    }
+  },
+  "seqModel": {
+    "dailyDemandML": {
+      "petrol": 6.18,
+      "diesel": 9.17,
+      "jet": 3.9
+    },
+    "demandMethod": {
+      "petrol": "70% of Queensland trailing-12-month petrol sales",
+      "diesel": "110 ML IOR terminal stated as 12 days of Brisbane-market diesel supply",
+      "jet": "70% of Queensland trailing-12-month jet-fuel sales"
+    },
+    "defaultScenario": "base",
+    "scenarios": {
+      "base": {
+        "label": "Base",
+        "description": "Cargoes and Lytton keep replacement close to demand; minor diesel drag persists.",
+        "supplyPctOfDemand": {
+          "petrol": 98,
+          "diesel": 96,
+          "jet": 98
+        }
+      },
+      "tight": {
+        "label": "Tight",
+        "description": "Repeated cargo slippage and constrained Asian product supply through the full 8-week window.",
+        "supplyPctOfDemand": {
+          "petrol": 90,
+          "diesel": 85,
+          "jet": 88
+        }
+      },
+      "severe": {
+        "label": "Severe",
+        "description": "Renewed route disruption, product export losses and no fast replacement of missing cargoes.",
+        "supplyPctOfDemand": {
+          "petrol": 75,
+          "diesel": 60,
+          "jet": 70
+        }
+      }
+    }
+  },
+  "importsMay2026": {
+    "majorProductsML": 4560.3,
+    "topOrigins": [
+      {
+        "country": "Singapore",
+        "volumeML": 1081.1
+      },
+      {
+        "country": "South Korea",
+        "volumeML": 1054.4
+      },
+      {
+        "country": "Malaysia",
+        "volumeML": 904.7
+      },
+      {
+        "country": "Brunei",
+        "volumeML": 308.5
+      },
+      {
+        "country": "Taiwan",
+        "volumeML": 288.9
+      },
+      {
+        "country": "India",
+        "volumeML": 273.5
+      },
+      {
+        "country": "United States",
+        "volumeML": 209.3
+      }
+    ]
+  },
+  "hormuz": {
+    "assessmentAsOf": "2026-07-27",
+    "risk": "Severe maritime threat; partial and fragile transit",
+    "preWarGulfExportsMbpd": 24,
+    "juneGulfExportsMbpd": 16.1,
+    "bypassCapacityLowMbpd": 3.5,
+    "bypassCapacityHighMbpd": 5.5,
+    "ieaEmergencyReleaseCommittedMb": 400,
+    "ieaEmergencyReleaseDeliveredMb": 290
+  }
+}

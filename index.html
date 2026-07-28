@@ -1,189 +1,340 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Australia Fuel Security Brief — 31 March 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Current Strait of Hormuz and Brisbane/SEQ refined-fuel supply dashboard.">
+<link rel="icon" href="data:,">
+<title>SEQ Fuel Security Monitor</title>
 <style>
-body{font-family:Arial,sans-serif;background:#f5f7fb;color:#1f2937;margin:0}
-.wrap{max-width:1100px;margin:0 auto;padding:24px}
-.hero{background:linear-gradient(135deg,#0b3b5c,#0f766e);color:#fff;border-radius:20px;padding:28px}
-.hero h1{margin:0 0 8px 0;font-size:34px}
-.hero p{margin:6px 0;color:#e8f7f4}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
-.stat{background:rgba(255,255,255,.12);border-radius:14px;padding:12px}
-.stat .k{font-size:12px;text-transform:uppercase;color:#d8f3ee}
-.stat .v{font-size:26px;font-weight:700;margin-top:4px}
-.section{background:#fff;border:1px solid #dbe3ee;border-radius:16px;padding:20px;margin-top:18px}
-h2{margin:0 0 10px 0}
-h3{margin:16px 0 8px 0}
-table{width:100%;border-collapse:collapse;margin-top:8px}
-th,td{border-bottom:1px solid #dbe3ee;padding:8px 10px;text-align:left;vertical-align:top}
-th{background:#f8fafc;font-size:13px}
-.callout{border-left:5px solid #0f766e;background:#f0fdfa;padding:12px 14px;border-radius:12px}
-.note{font-size:13px;color:#6b7280}
-.score{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
-.box{border:1px solid #dbe3ee;border-radius:12px;padding:12px;background:#fafafa}
-.tag{font-size:12px;font-weight:700;border-radius:999px;padding:3px 8px;display:inline-block}
-.neu{background:#eff6ff;color:#1d4ed8}.neg{background:#fef2f2;color:#991b1b}
-a{color:#1d4ed8;text-decoration:none} a:hover{text-decoration:underline}
-@media (max-width:900px){.grid,.score{grid-template-columns:1fr}}
+:root{
+  --ink:#132238;--muted:#627086;--paper:#f4f6f8;--card:#fff;--line:#dce2e9;
+  --navy:#0d2942;--blue:#136f8a;--teal:#0f8b78;--amber:#d97706;--red:#c2413b;
+  --petrol:#1c7ed6;--diesel:#d97706;--jet:#7c3aed;--shadow:0 14px 35px rgba(20,36,56,.08)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+a{color:#075e75}.shell{max-width:1220px;margin:auto;padding:0 24px 56px}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:18px 0;color:var(--muted);font-size:13px}
+.brand{font-weight:800;color:var(--ink);letter-spacing:.02em}.live{display:flex;align-items:center;gap:7px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px #fef3c7}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,#0b2238 0%,#0d4052 58%,#0d6b68 100%);color:white;border-radius:24px;padding:42px;box-shadow:var(--shadow)}
+.hero:after{content:"";position:absolute;width:440px;height:440px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-160px;top:-250px;box-shadow:0 0 0 70px rgba(255,255,255,.035),0 0 0 140px rgba(255,255,255,.025)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:#9fe4d9}
+h1{font-size:clamp(34px,5vw,58px);line-height:1.02;letter-spacing:-.045em;max-width:800px;margin:12px 0 14px}
+.lede{font-size:18px;max-width:820px;color:#dceff0;margin:0}
+.hero-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:32px;position:relative;z-index:1}
+.hero-stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);border-radius:14px;padding:14px}
+.hero-stat .label{font-size:11px;color:#c6dee2;text-transform:uppercase;letter-spacing:.06em}
+.hero-stat .value{font-size:27px;font-weight:800;margin-top:3px}.hero-stat .delta{font-size:12px;color:#b8ced3}
+.nav{display:flex;gap:8px;overflow:auto;padding:14px 2px 2px;position:sticky;top:0;z-index:20;background:rgba(244,246,248,.93);backdrop-filter:blur(12px)}
+.nav a{white-space:nowrap;text-decoration:none;color:#415066;background:white;border:1px solid var(--line);border-radius:99px;padding:8px 12px;font-size:13px;font-weight:700}
+.section{margin-top:22px}.section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin:0 2px 10px}
+.section h2{font-size:26px;letter-spacing:-.025em;margin:0}.section-intro{color:var(--muted);max-width:720px;margin:3px 0 0}
+.badge{display:inline-flex;align-items:center;border-radius:99px;padding:5px 9px;font-size:12px;font-weight:800;background:#fff4dd;color:#8c4b05;border:1px solid #f4d49a}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:1.4fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 7px 22px rgba(20,36,56,.04)}
+.card h3{margin:0 0 8px;font-size:17px}.card p{margin:7px 0}.muted{color:var(--muted)}.small{font-size:12px}
+.judgment{font-size:20px;line-height:1.42;border-left:5px solid var(--teal);padding:8px 0 8px 18px;margin:4px 0}
+.risk-list{display:grid;gap:9px;margin-top:12px}.risk-row{display:grid;grid-template-columns:92px 1fr;gap:10px;align-items:start}
+.tone{border-radius:7px;text-align:center;padding:4px 6px;font-size:11px;font-weight:900;text-transform:uppercase}
+.tone.amber{background:#fff3d6;color:#8a4a00}.tone.green{background:#dff7ef;color:#086a57}.tone.red{background:#fee8e7;color:#9f302b}
+.metric{padding:18px}.metric .k{font-size:12px;color:var(--muted);text-transform:uppercase;font-weight:800;letter-spacing:.05em}
+.metric .v{font-size:31px;font-weight:850;letter-spacing:-.04em;margin:4px 0}.metric .sub{font-size:12px;color:var(--muted)}
+.scenario-bar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 16px}
+button{font:inherit}.scenario{border:1px solid var(--line);background:white;border-radius:10px;padding:8px 13px;font-weight:800;color:#425269;cursor:pointer}
+.scenario.active{background:var(--navy);color:white;border-color:var(--navy)}
+.model-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(270px,.75fr);gap:16px}
+.chart-wrap{min-height:330px}.chart-legend{display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:3px 0 10px}
+.legend-key{display:inline-flex;align-items:center;gap:6px}.swatch{width:10px;height:10px;border-radius:50%}
+svg{width:100%;height:auto;display:block}.axis{stroke:#cfd7e1;stroke-width:1}.gridline{stroke:#e7ebf0;stroke-width:1}.axis-text{fill:#718096;font-size:11px}.line{fill:none;stroke-width:3}.point{stroke:white;stroke-width:2}
+.controls{display:grid;gap:14px}.control label{display:flex;justify-content:space-between;font-size:13px;font-weight:750}.control input{width:100%;accent-color:var(--teal)}
+.model-note{background:#f4f8f9;border:1px solid #d7e7e9;border-radius:12px;padding:12px;font-size:12px;color:#4f6470}
+.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:660px}th,td{text-align:left;border-bottom:1px solid var(--line);padding:11px 9px}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}td.num{text-align:right;font-variant-numeric:tabular-nums}
+.bar-row{display:grid;grid-template-columns:120px 1fr 70px;align-items:center;gap:10px;margin:9px 0}.bar-track{height:11px;background:#edf0f3;border-radius:99px;overflow:hidden}.bar-fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--teal));border-radius:99px}
+.trigger{display:grid;grid-template-columns:10px 1fr;gap:11px}.trigger-dot{width:10px;height:10px;border-radius:50%;margin-top:7px}
+.source-list{columns:2;column-gap:34px;padding-left:20px}.source-list li{break-inside:avoid;margin:0 0 8px}
+.callout{background:#edf8f6;border:1px solid #cce9e3;border-radius:14px;padding:15px 17px}
+.footer{text-align:center;color:var(--muted);font-size:12px;margin-top:28px}
+@media(max-width:920px){.hero{padding:30px}.hero-grid{grid-template-columns:repeat(2,1fr)}.g2,.g3,.g4,.model-grid{grid-template-columns:1fr}.source-list{columns:1}.section-head{display:block}}
+@media(max-width:520px){.shell{padding:0 14px 40px}.hero{border-radius:18px;padding:24px 20px}.hero-grid{grid-template-columns:1fr 1fr}.hero-stat .value{font-size:23px}.card{padding:16px}.risk-row{grid-template-columns:76px 1fr}}
 </style>
 </head>
 <body>
-<div class="wrap">
-<div class="hero">
-<h1>Australia Fuel Security Brief</h1>
-<p><strong>Updated:</strong> Tuesday, 31 March 2026 (Australia/Brisbane)</p>
-<p>Share-ready briefing with a forward-looking focus on fuel security, rather than a backward-looking news recap.</p>
-<div class="grid">
-<div class="stat"><div class="k">Official petrol cover</div><div class="v">38 days</div></div>
-<div class="stat"><div class="k">Official jet cover</div><div class="v">29 days</div></div>
-<div class="stat"><div class="k">Official diesel cover</div><div class="v">32 days</div></div>
-<div class="stat"><div class="k">Brisbane ULP91 today</div><div class="v">$2.58/L</div></div>
-</div>
-</div>
+<main class="shell">
+  <div class="topbar">
+    <div class="brand">SEQ FUEL SECURITY MONITOR</div>
+    <div class="live"><span class="dot"></span><span id="freshness">Loading public snapshot…</span></div>
+  </div>
 
-<div class="section">
-<h2>Executive judgment</h2>
-<div class="callout"><strong>Bottom line:</strong> Australia still looks physically supplied rather than physically broken. The official stock base remains above the legal floor, Queensland ports are still moving fuel-relevant ships, and Brisbane retains both refinery and storage infrastructure. The main risk over the next 2–6 weeks is not an immediate stock-out, but high replacement cost, tighter diesel conditions, and fragile replenishment if additional import cargoes slip or disappear.</div>
-<div class="score">
-<div class="box"><strong>Official stocks</strong><br><span class="tag neu">Stable</span><div class="note">No new official weekly stock print yet; latest published levels remain above MSO.</div></div>
-<div class="box"><strong>Queensland physical flow</strong><br><span class="tag neu">Active</span><div class="note">Brisbane, Gladstone and Townsville all still show live tanker and gas-carrier movements.</div></div>
-<div class="box"><strong>Forward replenishment risk</strong><br><span class="tag neg">Elevated</span><div class="note">Cancelled or deferred cargoes and longer-haul replacement sourcing still matter more than same-day berth activity.</div></div>
-<div class="box"><strong>Retail / diesel stress</strong><br><span class="tag neg">Severe</span><div class="note">Diesel remains the sharpest pressure point and pump prices remain near monitored highs.</div></div>
-</div>
-</div>
+  <header class="hero">
+    <div class="eyebrow">Brisbane / South East Queensland</div>
+    <h1>Supplied now. Fragile if replenishment slips.</h1>
+    <p class="lede">A decision-focused view of the Strait of Hormuz shock, Australian refined-fuel supply and the likely 8-week stock path for SEQ.</p>
+    <div class="hero-grid">
+      <div class="hero-stat"><div class="label">Petrol cover</div><div class="value" id="heroPetrol">—</div><div class="delta" id="petrolDelta">National MSO</div></div>
+      <div class="hero-stat"><div class="label">Diesel cover</div><div class="value" id="heroDiesel">—</div><div class="delta" id="dieselDelta">National MSO</div></div>
+      <div class="hero-stat"><div class="label">Jet cover</div><div class="value" id="heroJet">—</div><div class="delta" id="jetDelta">National MSO</div></div>
+      <div class="hero-stat"><div class="label">Clean product inflow</div><div class="value" id="heroFlow">—</div><div class="delta">Equivalent days on water</div></div>
+      <div class="hero-stat"><div class="label">QLD diesel stock-outs</div><div class="value" id="heroStockouts">—</div><div class="delta">Reported retail sites</div></div>
+    </div>
+  </header>
 
-<div class="section">
-<h2>What changed since yesterday</h2>
-<ul>
-<li><strong>No new official stock dataset.</strong> The latest official stock source remains DCCEEW's MSO statistics page, last updated 26 March 2026.</li>
-<li><strong>Policy step now live:</strong> the three-month halving of fuel excise starts from 1 April, which should relieve pump prices but does not add stock by itself.</li>
-<li><strong>Pump prices are still at extreme levels.</strong> Brisbane ULP91 is $2.58/L and diesel is $3.22/L; the simple SEQ ULP91 average is also about $2.58/L.</li>
-<li><strong>Queensland port-flow proxies remain active.</strong> Brisbane is at 38 arrivals in the past 24 hours / 47 expected in the next 30 days; Gladstone 18 / 50; Townsville 22 / 4.</li>
-</ul>
-</div>
+  <nav class="nav" aria-label="Dashboard sections">
+    <a href="#judgment">Judgment</a><a href="#stocks">Stock outlook</a><a href="#hormuz">Hormuz</a>
+    <a href="#australia">Australia exposure</a><a href="#triggers">Watchlist</a><a href="#method">Method</a>
+  </nav>
 
-<div class="section">
-<h2>1) Official national reserve levels</h2>
-<p>The latest published official MSO values still visible are:</p>
-<table>
-<thead><tr><th>Fuel</th><th>Official volume</th><th>Days of cover</th><th>MSO requirement</th><th>Status</th></tr></thead>
-<tbody>
-<tr><td>Petrol</td><td>1,631 ML</td><td>38 days</td><td>1,067 ML</td><td>Above floor</td></tr>
-<tr><td>Jet fuel</td><td>790 ML</td><td>29 days</td><td>663 ML</td><td>Above floor</td></tr>
-<tr><td>Diesel</td><td>2,905 ML</td><td>32 days</td><td>2,742 ML</td><td>Above floor, smallest margin</td></tr>
-</tbody>
-</table>
-<p class="note">A newer ministerial snapshot has quoted about 39 days of petrol and 30 days each of diesel and jet fuel, but there is no matching newer public official volume table yet.</p>
-</div>
+  <section class="section" id="judgment">
+    <div class="section-head"><div><h2>Executive judgment</h2><p class="section-intro">Physical availability is currently adequate; the market signal is tighter and less comfortable than the headline stock number alone.</p></div><span class="badge" id="planStatus">Level 2</span></div>
+    <div class="grid g2">
+      <article class="card">
+        <p class="judgment"><strong>Most likely over the next 4–8 weeks:</strong> SEQ remains supplied in aggregate, helped by above-pre-conflict national stocks, scheduled cargoes and operating Lytton infrastructure. Diesel carries the largest downside because regional product markets remain tighter than crude markets.</p>
+        <p class="muted">This is not a guarantee of every grade at every retail site. Temporary local outages can occur while bulk stocks remain adequate.</p>
+      </article>
+      <article class="card">
+        <h3>Risk balance</h3>
+        <div class="risk-list">
+          <div class="risk-row"><span class="tone green">Buffer</span><span>MSO cover remains above the March-quarter average for all three fuels.</span></div>
+          <div class="risk-row"><span class="tone amber">Tight</span><span>Clean-product cargo cover fell from <strong id="flowPrior">—</strong> to <strong id="flowNow">—</strong> days week-on-week.</span></div>
+          <div class="risk-row"><span class="tone red">Global</span><span>Hormuz maritime risk remains severe and Gulf product exports have recovered more slowly than crude.</span></div>
+        </div>
+      </article>
+    </div>
+    <div class="grid g4" style="margin-top:14px">
+      <div class="card metric"><div class="k">Brisbane petrol</div><div class="v" id="petrolPrice">—</div><div class="sub">22 July retail average</div></div>
+      <div class="card metric"><div class="k">Brisbane diesel</div><div class="v" id="dieselPrice">—</div><div class="sub">22 July retail average</div></div>
+      <div class="card metric"><div class="k">Singapore gasoil</div><div class="v" id="gasoilPrice">—</div><div class="sub" id="gasoilDelta">vs pre-conflict</div></div>
+      <div class="card metric"><div class="k">4-week arrivals</div><div class="v" id="scheduledArrivals">—</div><div class="sub">Crude + major fuels, national</div></div>
+    </div>
+  </section>
 
-<div class="section">
-<h2>2) Government actions</h2>
-<ul>
-<li><strong>MSO release:</strong> up to 20% of petrol and diesel MSO stocks, worth up to 762 million litres, remains available to the market.</li>
-<li><strong>Fuel-quality adjustments:</strong> petrol sulfur flexibility and the 24 March diesel flashpoint adjustment remain in place.</li>
-<li><strong>Import-support powers:</strong> the 28 March package to underwrite additional fuel cargoes remains part of the response.</li>
-<li><strong>Price relief:</strong> fuel excise is halved for three months from 1 April, cutting tax by 26.3 c/L. This helps affordability, not physical stocks.</li>
-</ul>
-<div class="callout"><strong>Forward-looking interpretation:</strong> the policy mix now has two tracks — supply continuity (reserve release, standards flexibility, cargo underwriting) and affordability relief (excise cut). That is consistent with a system that is still functioning physically, but under enough stress that price transmission has become politically salient.</div>
-</div>
+  <section class="section" id="stocks">
+    <div class="section-head"><div><h2>SEQ 8-week stock outlook</h2><p class="section-intro">Scenario model: national MSO days are the starting planning proxy; Queensland sales and known Brisbane infrastructure size the local demand equivalent.</p></div><span class="badge">Modelled, not observed</span></div>
+    <div class="card">
+      <div class="scenario-bar" id="scenarioButtons"></div>
+      <p class="muted" id="scenarioDescription"></p>
+      <div class="model-grid">
+        <div class="chart-wrap">
+          <div class="chart-legend">
+            <span class="legend-key"><span class="swatch" style="background:var(--petrol)"></span>Petrol</span>
+            <span class="legend-key"><span class="swatch" style="background:var(--diesel)"></span>Diesel</span>
+            <span class="legend-key"><span class="swatch" style="background:var(--jet)"></span>Jet</span>
+          </div>
+          <svg id="stockChart" viewBox="0 0 760 330" role="img" aria-label="Projected fuel cover over eight weeks"></svg>
+        </div>
+        <div>
+          <div class="controls">
+            <div class="control"><label for="petrolSupply">Petrol replenishment <span id="petrolSupplyOut"></span></label><input id="petrolSupply" type="range" min="40" max="110" value="98"></div>
+            <div class="control"><label for="dieselSupply">Diesel replenishment <span id="dieselSupplyOut"></span></label><input id="dieselSupply" type="range" min="40" max="110" value="96"></div>
+            <div class="control"><label for="jetSupply">Jet replenishment <span id="jetSupplyOut"></span></label><input id="jetSupply" type="range" min="40" max="110" value="98"></div>
+            <div class="control"><label for="demand">Demand vs normal <span id="demandOut"></span></label><input id="demand" type="range" min="80" max="115" value="100"></div>
+          </div>
+          <div class="model-note" style="margin-top:16px"><strong>How to read it:</strong> 100% replenishment means inflows plus local refining exactly match consumption. The model does not claim to observe commercial terminal tanks.</div>
+        </div>
+      </div>
+      <div class="table-wrap" style="margin-top:10px"><table>
+        <thead><tr><th>Fuel</th><th>SEQ demand estimate</th><th>Planning stock equivalent now</th><th>Week 4 cover</th><th>Week 8 cover</th><th>Confidence</th></tr></thead>
+        <tbody id="modelTable"></tbody>
+      </table></div>
+    </div>
+  </section>
 
-<div class="section">
-<h2>3) Inflows and outflows relevant to Australia, especially Queensland</h2>
-<p><strong>Official movement access:</strong> Queensland's official public movement gateway remains QSHIPS, and Maritime Safety Queensland directs users there for ship movements.</p>
-<ul>
-<li><strong>Brisbane:</strong> 38 arrivals in the past 24 hours; 47 expected in the next 30 days. Tanker signals visible include <strong>ASL ORCHID</strong> expected and <strong>SOUTHERN LEADER</strong> / <strong>OCEANA RIVER</strong> in port as crude tankers.</li>
-<li><strong>Gladstone:</strong> 18 arrivals in the past 24 hours; 50 expected in the next 30 days. <strong>MEGARA</strong> is visible as LNG tanker in port / arrival activity.</li>
-<li><strong>Townsville:</strong> 22 arrivals in the past 24 hours; 4 expected in the next 30 days. <strong>GRAND WINNER 6</strong> appears in the recent-arrivals list as a chemical/oil-products tanker.</li>
-</ul>
-<p class="note">These are proxy indicators, not audited cargo ledgers. The sharper risk remains in the forward pipeline rather than today's berth list.</p>
-</div>
+  <section class="section" id="hormuz">
+    <div class="section-head"><div><h2>Strait of Hormuz: current situation</h2><p class="section-intro">The June reopening improved crude flows, but July attacks and renewed hostilities prevented a normalisation of shipping or refined-product output.</p></div><span class="badge">As at 27 Jul 2026</span></div>
+    <div class="grid g3">
+      <article class="card"><h3>Transit is partial and unsafe</h3><p>Gulf exports recovered to <strong>16.1 mb/d</strong> in June from the spring collapse, still far below the <strong>24 mb/d</strong> pre-war average. Commercial traffic was reported at a three-week low on 27 July.</p></article>
+      <article class="card"><h3>Products lag crude</h3><p>In June, Gulf refined-product and LPG exports were still below half of pre-war levels while crude flows approached three-quarters. That gap explains the persistent diesel and petrol margin shock.</p></article>
+      <article class="card"><h3>Bypass is limited</h3><p>Saudi and UAE pipelines offer roughly <strong>3.5–5.5 mb/d</strong> of available bypass capacity. Bab el-Mandeb threats now also weaken the Red Sea alternative.</p></article>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h3>What would change the outlook?</h3>
+      <div class="grid g3">
+        <div><span class="tone green">Improve</span><p>Durable ceasefire, safe-passage assurance, lower war-risk insurance and restart of Gulf export refineries.</p></div>
+        <div><span class="tone amber">Current</span><p>Intermittent protected transits, alternative-route exports and continuing emergency stock releases.</p></div>
+        <div><span class="tone red">Deteriorate</span><p>More merchant-ship attacks, mine risk, Lytton outage, or disruption of Saudi Red Sea bypass routes.</p></div>
+      </div>
+    </div>
+  </section>
 
-<div class="section">
-<h2>4) Brisbane / Queensland supply specifics</h2>
-<ul>
-<li>Brisbane has <strong>an oil refinery and multiple bulk liquid terminals</strong>, and crude oil is one of the port's principal imports.</li>
-<li>IOR's Port of Brisbane <strong>Lytton Terminal</strong> is a <strong>110 ML diesel import and storage facility</strong> that can add up to <strong>12 days</strong> of diesel supply storage into the Brisbane market.</li>
-<li>Lytton maintenance has been deferred, which improves near-term operating resilience.</li>
-</ul>
-<div class="callout"><strong>Forward-looking interpretation:</strong> Queensland remains better positioned than a purely import-dependent market because it has both refining and storage. That lowers the probability of a sudden hard stop, but it does not immunise the market from high prices, diesel tightness, or prolonged replenishment stress.</div>
-</div>
+  <section class="section" id="australia">
+    <div class="section-head"><div><h2>Australia’s exposure and substitutes</h2><p class="section-intro">Direct Gulf barrels are not the whole story. Australia mainly buys finished fuels from Asian refineries whose crude supply and product margins remain tied to the Gulf.</p></div></div>
+    <div class="grid g2">
+      <article class="card">
+        <h3>May 2026 major refined-product origins</h3>
+        <p class="small muted">Petrol + diesel + jet; national APS, latest complete month.</p>
+        <div id="importBars"></div>
+      </article>
+      <article class="card">
+        <h3>Exposure assessment</h3>
+        <div class="risk-list">
+          <div class="risk-row"><span class="tone green">Direct</span><span><strong>Low–moderate.</strong> The latest major product cargoes were led by Singapore, South Korea and Malaysia rather than direct Gulf suppliers.</span></div>
+          <div class="risk-row"><span class="tone amber">Indirect</span><span><strong>Material.</strong> The top three Asian origins supplied about two-thirds of May’s petrol, diesel and jet imports and are price/feedstock exposed to Gulf disruption.</span></div>
+          <div class="risk-row"><span class="tone red">Price</span><span><strong>Very high.</strong> Singapore gasoil was <span id="priceExposure">—</span> above pre-conflict levels.</span></div>
+          <div class="risk-row"><span class="tone green">Lytton</span><span><strong>Useful buffer.</strong> Lytton processes light sweet crude sourced from a diversified non-Gulf slate and produced 1,434 ML in Q1.</span></div>
+        </div>
+        <div class="callout" style="margin-top:16px"><strong>Substitution order:</strong> regional Asian cargoes and Lytton output first; then US/European long-haul cargoes. Substitution is feasible but slower, costlier and constrained for diesel/jet.</div>
+      </article>
+    </div>
+  </section>
 
-<div class="section">
-<h2>5) Prices today</h2>
-<table>
-<thead><tr><th>Location / source</th><th>ULP91</th><th>Diesel</th><th>Implication</th></tr></thead>
-<tbody>
-<tr><td>Brisbane retail</td><td>$2.58/L</td><td>$3.22/L</td><td>Still near monitored peaks</td></tr>
-<tr><td>Gold Coast retail</td><td>$2.58/L</td><td>—</td><td>Still near monitored peaks</td></tr>
-<tr><td>Sunshine Coast retail</td><td>$2.58/L</td><td>—</td><td>Still near monitored peaks</td></tr>
-<tr><td>Ipswich retail</td><td>$2.59/L</td><td>—</td><td>Still near monitored peaks</td></tr>
-<tr><td><strong>SEQ simple ULP91 average</strong></td><td><strong>$2.58/L</strong></td><td>—</td><td>Simple unweighted blend</td></tr>
-<tr><td>Viva Brisbane TGP (31 Mar)</td><td>233.96 c/L</td><td>306.88 c/L</td><td>Wholesale remains very high</td></tr>
-<tr><td>United Brisbane TGP (31 Mar)</td><td>236.73 c/L</td><td>314.41 c/L</td><td>Diesel especially tight</td></tr>
-</tbody>
-</table>
-<p class="note">The key forward-looking message from prices is not whether they are up another cent today, but that diesel remains markedly tighter than petrol and retail prices still look consistent with replacement-cost pricing rather than a market expecting relief imminently.</p>
-</div>
+  <section class="section" id="triggers">
+    <div class="section-head"><div><h2>Operational watchlist</h2><p class="section-intro">The variables that should drive decisions—not tanker headlines in isolation.</p></div></div>
+    <div class="grid g3">
+      <article class="card trigger"><span class="trigger-dot" style="background:var(--amber)"></span><div><h3>Clean-product cargo cover</h3><p><strong id="watchFlow">—</strong> days now. Escalate concern below 10 days or after two consecutive weekly falls.</p></div></article>
+      <article class="card trigger"><span class="trigger-dot" style="background:var(--teal)"></span><div><h3>National diesel cover</h3><p><strong id="watchDiesel">—</strong> days now. Escalate below 25 days; severe below 18 days.</p></div></article>
+      <article class="card trigger"><span class="trigger-dot" style="background:var(--teal)"></span><div><h3>Queensland retail outages</h3><p><strong id="watchOutages">—</strong> diesel sites now. Escalate above 5% of reporting sites or a broad multi-week rise.</p></div></article>
+      <article class="card trigger"><span class="trigger-dot" style="background:var(--amber)"></span><div><h3>Lytton availability</h3><p>Any unplanned refinery outage materially worsens SEQ’s import requirement and should override the base scenario.</p></div></article>
+      <article class="card trigger"><span class="trigger-dot" style="background:var(--amber)"></span><div><h3>Product cracks</h3><p>Persistent gasoil elevation signals physical product scarcity even if Brent crude falls.</p></div></article>
+      <article class="card trigger"><span class="trigger-dot" style="background:var(--red)"></span><div><h3>Maritime security</h3><p>Merchant-ship attacks, insurance withdrawal or Bab el-Mandeb closure would move the model toward severe.</p></div></article>
+    </div>
+  </section>
 
-<div class="section">
-<h2>Forward-looking analysis</h2>
-<p><strong>1. The system still looks physically intact.</strong> The official stock floor has not been breached in public data, port movements remain active, and Queensland still has both refining and storage infrastructure.</p>
-<p><strong>2. Diesel remains the key vulnerability.</strong> Diesel has the tightest official margin over the legal floor and the sharpest wholesale and retail pricing pressure.</p>
-<p><strong>3. The next risk window is April replenishment.</strong> The market is living off a combination of current stocks, current refinery output, and confidence that replacement cargoes will keep arriving. The known deferred or cancelled cargoes matter because they affect replenishment rather than today's visible stock.</p>
-<p><strong>4. Policy may lower pain faster than it lowers risk.</strong> The excise cut should reduce retail prices mechanically, but it does not improve national stock depth. Cargo underwriting and standards changes do more for physical resilience, but they work with a lag.</p>
-<p><strong>5. Base case for the next 2–6 weeks:</strong> physical availability likely remains adequate in aggregate, but diesel remains the segment to watch most closely and April cargo execution is the key risk trigger.</p>
-<div class="callout"><strong>Most defensible forward-looking conclusion:</strong> Australia's fuel system still looks functional, but it is operating on thinner comfort margins than normal. Queensland should remain supplied, yet the combination of diesel tightness, expensive replacement barrels, and uncertain April replenishment keeps the outlook fragile rather than secure.</div>
-</div>
+  <section class="section" id="method">
+    <div class="section-head"><div><h2>Method, uncertainty and sources</h2><p class="section-intro">Observed figures and model assumptions are deliberately separated.</p></div></div>
+    <div class="grid g2">
+      <article class="card">
+        <h3>SEQ stock availability: what is known</h3>
+        <p>Commercial Brisbane/SEQ tank-by-tank inventory is not publicly reported. Official MSO figures are national and include qualifying stocks in Australia and in the Australian EEZ.</p>
+        <p>The model therefore uses national cover as a <strong>planning proxy</strong>, not a measurement of local tanks. SEQ daily demand is estimated from Queensland trailing-12-month sales: 70% for petrol and jet, while diesel is anchored to IOR’s statement that its 110 ML Lytton terminal represents up to 12 days of Brisbane-market supply.</p>
+        <p><strong>Uncertainty:</strong> medium for demand; low-to-medium for the 4–8 week direction; low for any precise local stock volume. Cargo allocation, terminal utilisation and refinery product yields are commercial data.</p>
+      </article>
+      <article class="card">
+        <h3>Refresh design</h3>
+        <p>The page loads <code>data/snapshot.json</code>. A scheduled GitHub Action fetches the official Fuel Plan page weekly and updates national stocks, arrivals, prices and Queensland retail outages. The geopolitical assessment and APS demand assumptions remain reviewed snapshots because automated narrative updates would be unsafe.</p>
+        <p class="small muted">If an automated refresh fails, the last validated snapshot remains visible rather than substituting missing or invented values.</p>
+      </article>
+    </div>
+    <div class="card" style="margin-top:14px">
+      <h3>Primary and authoritative sources</h3>
+      <ul class="source-list">
+        <li><a href="https://fuelplan.gov.au/fuel-statistics">Australian Government Fuel Plan — weekly statistics</a></li>
+        <li><a href="https://www.dcceew.gov.au/energy/security/australias-fuel-security/minimum-stockholding-obligation/statistics">DCCEEW — MSO statistics</a></li>
+        <li><a href="https://www.energy.gov.au/publications/australian-petroleum-statistics-2026">DCCEEW — Australian Petroleum Statistics 2026</a></li>
+        <li><a href="https://www.iea.org/reports/oil-market-report-july-2026">IEA — Oil Market Report, July 2026</a></li>
+        <li><a href="https://www.iea.org/news/iea-executive-director-statement-on-oil-markets">IEA — statement on oil markets, 21 July</a></li>
+        <li><a href="https://www.iea.org/topics/the-middle-east-and-global-energy-markets">IEA — Middle East and global energy markets</a></li>
+        <li><a href="https://www.eia.gov/international/content/analysis/special_topics/World_Oil_Transit_Chokepoints/">US EIA — world oil transit chokepoints</a></li>
+        <li><a href="https://www.imo.org/en/mediacentre/hottopics/pages/middle-east-strait-of-hormuz.aspx">IMO — Strait of Hormuz shipping updates</a></li>
+        <li><a href="https://www.ampol.com.au/frequently-asked-questions/fuel-supply-update">Ampol — fuel supply update</a></li>
+        <li><a href="https://www.asx.com.au/asx/v2/statistics/displayAnnouncement.do?display=pdf&amp;idsId=03084979">Ampol — Q1 2026 trading update (ASX)</a></li>
+        <li><a href="https://www.ior.com.au/wp-content/uploads/2024/11/IOR-BDV-STD-01-Modern-Slavery-Statement.pdf">IOR — 110 ML Lytton terminal disclosure</a></li>
+        <li><a href="https://www.abs.gov.au/statistics/people/population/regional-population/latest-release">ABS — regional population 2024–25</a></li>
+        <li><a href="https://apnews.com/article/d57e675a7be6dbdd34561909ced240d0">AP — 27 July shipping and diplomacy update</a></li>
+      </ul>
+    </div>
+  </section>
 
-<div class="section">
-<h2>6) Rolling 30-day tanker-arrivals appendix</h2>
-<p class="note">This is a conservative observed sample from public vessel-history pages and port snapshots. It is useful as a directional flow gauge, not a complete customs-grade ledger.</p>
-<table>
-<thead><tr><th>Date</th><th>Port</th><th>Vessel</th><th>Tanker type</th></tr></thead>
-<tbody>
-<tr><td>25 Feb 2026</td><td>Botany</td><td>FLAGSHIP IVY</td><td>Oil products tanker</td></tr>
-<tr><td>28 Feb 2026</td><td>Townsville</td><td>THERESA MICRONESIA</td><td>Oil/Chemical tanker</td></tr>
-<tr><td>1 Mar 2026</td><td>Brisbane</td><td>FLAGSHIP IVY</td><td>Oil products tanker</td></tr>
-<tr><td>1 Mar 2026</td><td>Townsville</td><td>GOLDEN CHIE</td><td>Oil/Chemical tanker</td></tr>
-<tr><td>4 Mar 2026</td><td>Brisbane</td><td>GOLDEN CHIE</td><td>Oil/Chemical tanker</td></tr>
-<tr><td>8 Mar 2026</td><td>Gladstone</td><td>TOPAZ EXPRESS</td><td>Oil products tanker</td></tr>
-<tr><td>10 Mar 2026</td><td>Mackay</td><td>TOPAZ EXPRESS</td><td>Oil products tanker</td></tr>
-<tr><td>10 Mar 2026</td><td>Melbourne</td><td>THERESA MICRONESIA</td><td>Oil/Chemical tanker</td></tr>
-<tr><td>20 Mar 2026</td><td>Townsville</td><td>THERESA MICRONESIA</td><td>Oil/Chemical tanker</td></tr>
-<tr><td>31 Mar 2026</td><td>Townsville</td><td>GRAND WINNER 6</td><td>Chemical/Oil products tanker</td></tr>
-<tr><td>31 Mar 2026</td><td>Gladstone</td><td>MEGARA</td><td>LNG tanker</td></tr>
-</tbody>
-</table>
-<p><strong>Weekly sample counts:</strong> 24 Feb–2 Mar: 4; 3–9 Mar: 2; 10–16 Mar: 2; 17–23 Mar: 1; 24–31 Mar: 2. The prior four completed week-buckets average about <strong>2.25 arrivals per week</strong>, so the current week is roughly in line with that conservative public baseline.</p>
-</div>
+  <div class="footer">Planning dashboard only — not a guarantee of supply and not a substitute for government or industry operational data.</div>
+</main>
 
-<div class="section">
-<h2>Sources</h2>
-<ul>
-<li><a href="https://www.dcceew.gov.au/energy/security/australias-fuel-security/minimum-stockholding-obligation/statistics">DCCEEW — MSO statistics</a></li>
-<li><a href="https://www.dcceew.gov.au/energy/security/australias-fuel-security/minimum-stockholding-obligation">DCCEEW — MSO / temporary reduction</a></li>
-<li><a href="https://www.pm.gov.au/media/fuel-excise-halved-three-months">Prime Minister — Fuel excise halved for three months</a></li>
-<li><a href="https://minister.dcceew.gov.au/bowen/media-releases/joint-media-release-fuel-security-powers-support-fuel-supply">Minister Bowen — Fuel security powers to support fuel supply</a></li>
-<li><a href="https://www.reuters.com/business/energy/australia-amend-export-finance-laws-boost-fuel-security-pm-albanese-says-2026-03-28/">Reuters — Export-finance laws to boost fuel security</a></li>
-<li><a href="https://www.accc.gov.au/about-us/publications/weekly-fuel-price-monitoring-update">ACCC — Weekly fuel price monitoring update</a></li>
-<li><a href="https://qships.tmr.qld.gov.au/webx/">QSHIPS public portal</a></li>
-<li><a href="https://www.msq.qld.gov.au/shipping/port-procedures/port-procedures-brisbane">MSQ — Brisbane port procedures</a></li>
-<li><a href="https://www.vesselfinder.com/ports/AUBNE001">VesselFinder — Brisbane</a></li>
-<li><a href="https://www.vesselfinder.com/ports/AUGLT001">VesselFinder — Gladstone</a></li>
-<li><a href="https://www.vesselfinder.com/ports/AUTSV001">VesselFinder — Townsville</a></li>
-<li><a href="https://fuelprice.io/qld/brisbane/unleaded/">FuelPrice Australia — Brisbane ULP91</a></li>
-<li><a href="https://fuelprice.io/qld/brisbane/diesel/">FuelPrice Australia — Brisbane diesel</a></li>
-<li><a href="https://fuelprice.io/qld/gold-coast/unleaded/">FuelPrice Australia — Gold Coast ULP91</a></li>
-<li><a href="https://fuelprice.io/qld/sunshine-coast/unleaded/">FuelPrice Australia — Sunshine Coast ULP91</a></li>
-<li><a href="https://fuelprice.io/qld/ipswich/unleaded/">FuelPrice Australia — Ipswich ULP91</a></li>
-<li><a href="https://www.vivaenergy.com.au/quick-links/terminal-gate-pricing">Viva Energy — Terminal Gate Pricing</a></li>
-<li><a href="https://www.unitedpetroleum.com.au/terminal-gate-pricing-tgp/">United Petroleum — Terminal Gate Pricing</a></li>
-<li><a href="https://www.ior.com.au/fuel-solutions/supply-and-trading/lytton-terminal/">IOR — Lytton Terminal</a></li>
-</ul>
-</div>
-</div>
+<script>
+const fallback = {
+  meta:{generatedAt:"2026-07-28T06:00:00+10:00",stockAsOf:"2026-07-21",flowAsOf:"2026-07-24",status:"Level 2 — Keep Australia moving"},
+  national:{coverDays:{petrol:42,diesel:38,jet:32},stocksML:{petrol:1814,diesel:3534,jet:892},priorWeek:{coverDays:{petrol:46,diesel:39,jet:34}},scheduledArrivalsBillionLitres:3.1},
+  flows:{cleanProductEquivalentDays:14,priorCleanProductEquivalentDays:17},
+  prices:{brisbanePetrolAudPerL:1.80,brisbaneDieselAudPerL:2.17,singaporeGasoilUsdPerBarrel:152,gasoilVsPreConflictPct:71},
+  queensland:{retailSites:1800,petrolStockouts:10,dieselStockouts:14},
+  seqModel:{dailyDemandML:{petrol:6.18,diesel:9.17,jet:3.90},defaultScenario:"base",scenarios:{
+    base:{label:"Base",description:"Cargoes and Lytton keep replacement close to demand; minor diesel drag persists.",supplyPctOfDemand:{petrol:98,diesel:96,jet:98}},
+    tight:{label:"Tight",description:"Repeated cargo slippage and constrained Asian product supply through the full 8-week window.",supplyPctOfDemand:{petrol:90,diesel:85,jet:88}},
+    severe:{label:"Severe",description:"Renewed route disruption, product export losses and no fast replacement of missing cargoes.",supplyPctOfDemand:{petrol:75,diesel:60,jet:70}}
+  }},
+  importsMay2026:{majorProductsML:4560.3,topOrigins:[
+    {country:"Singapore",volumeML:1081.1},{country:"South Korea",volumeML:1054.4},{country:"Malaysia",volumeML:904.7},
+    {country:"Brunei",volumeML:308.5},{country:"Taiwan",volumeML:288.9},{country:"India",volumeML:273.5},{country:"United States",volumeML:209.3}
+  ]}
+};
+const $=id=>document.getElementById(id);
+const fuels=["petrol","diesel","jet"];
+const labels={petrol:"Petrol",diesel:"Diesel",jet:"Jet"};
+const colors={petrol:"#1c7ed6",diesel:"#d97706",jet:"#7c3aed"};
+let data,activeScenario="base";
+
+const fmtDate=iso=>new Intl.DateTimeFormat("en-AU",{day:"numeric",month:"short",year:"numeric"}).format(new Date(`${iso}T00:00:00`));
+const money=v=>`$${Number(v).toFixed(2)}/L`;
+const pct=v=>`${Number(v).toFixed(v<1?2:1)}%`;
+
+function projection(fuel,weeks){
+  const start=data.national.coverDays[fuel];
+  const supply=Number($(`${fuel}Supply`).value)/100;
+  const demand=Number($("demand").value)/100;
+  return Math.max(0,start+(supply-demand)*weeks*7);
+}
+function renderChart(){
+  const svg=$("stockChart"),W=760,H=330,m={l:45,r:18,t:14,b:34},max=50;
+  const x=w=>m.l+(w/8)*(W-m.l-m.r), y=v=>m.t+(max-v)/max*(H-m.t-m.b);
+  let out="";
+  for(let v=0;v<=50;v+=10)out+=`<line class="gridline" x1="${m.l}" x2="${W-m.r}" y1="${y(v)}" y2="${y(v)}"/><text class="axis-text" x="${m.l-9}" y="${y(v)+4}" text-anchor="end">${v}</text>`;
+  for(let w=0;w<=8;w+=2)out+=`<text class="axis-text" x="${x(w)}" y="${H-9}" text-anchor="middle">W${w}</text>`;
+  out+=`<line class="axis" x1="${m.l}" x2="${m.l}" y1="${m.t}" y2="${H-m.b}"/><line class="axis" x1="${m.l}" x2="${W-m.r}" y1="${H-m.b}" y2="${H-m.b}"/>`;
+  for(const fuel of fuels){
+    const points=Array.from({length:9},(_,w)=>[x(w),y(projection(fuel,w))]);
+    out+=`<polyline class="line" stroke="${colors[fuel]}" points="${points.map(p=>p.join(",")).join(" ")}"/>`;
+    for(const [px,py] of points.filter((_,i)=>i%2===0))out+=`<circle class="point" fill="${colors[fuel]}" cx="${px}" cy="${py}" r="4"/>`;
+  }
+  out+=`<text class="axis-text" transform="translate(13 ${H/2}) rotate(-90)" text-anchor="middle">days of cover</text>`;
+  svg.innerHTML=out;
+}
+function renderModelTable(){
+  $("modelTable").innerHTML=fuels.map(fuel=>{
+    const daily=data.seqModel.dailyDemandML[fuel];
+    const proxy=daily*data.national.coverDays[fuel];
+    const confidence=fuel==="diesel"?"Medium":"Low–medium";
+    return `<tr><td><strong>${labels[fuel]}</strong></td><td class="num">${daily.toFixed(1)} ML/day</td><td class="num">${proxy.toFixed(0)} ML proxy</td><td class="num">${projection(fuel,4).toFixed(1)} days</td><td class="num"><strong>${projection(fuel,8).toFixed(1)} days</strong></td><td>${confidence}</td></tr>`;
+  }).join("");
+}
+function updateControls(){
+  for(const fuel of fuels)$(`${fuel}SupplyOut`).textContent=`${$(`${fuel}Supply`).value}%`;
+  $("demandOut").textContent=`${$("demand").value}%`;
+  renderChart();renderModelTable();
+}
+function selectScenario(key){
+  activeScenario=key;
+  const s=data.seqModel.scenarios[key];
+  for(const fuel of fuels)$(`${fuel}Supply`).value=s.supplyPctOfDemand[fuel];
+  $("demand").value=100;
+  document.querySelectorAll(".scenario").forEach(b=>b.classList.toggle("active",b.dataset.key===key));
+  $("scenarioDescription").textContent=s.description;
+  updateControls();
+}
+function populate(){
+  $("freshness").textContent=`Stocks ${fmtDate(data.meta.stockAsOf)} · flows ${fmtDate(data.meta.flowAsOf)}`;
+  $("planStatus").textContent=data.meta.status;
+  for(const fuel of fuels){
+    $(`hero${fuel[0].toUpperCase()+fuel.slice(1)}`).textContent=`${data.national.coverDays[fuel]} days`;
+    const prior=data.national.priorWeek?.coverDays?.[fuel];
+    if(prior!=null)$(`${fuel}Delta`).textContent=`${data.national.coverDays[fuel]-prior} days week-on-week`;
+  }
+  $("heroFlow").textContent=`${data.flows.cleanProductEquivalentDays} days`;
+  $("heroStockouts").textContent=pct(data.queensland.dieselStockouts/data.queensland.retailSites*100);
+  $("flowPrior").textContent=data.flows.priorCleanProductEquivalentDays;
+  $("flowNow").textContent=data.flows.cleanProductEquivalentDays;
+  $("petrolPrice").textContent=money(data.prices.brisbanePetrolAudPerL);
+  $("dieselPrice").textContent=money(data.prices.brisbaneDieselAudPerL);
+  $("gasoilPrice").textContent=`US$${data.prices.singaporeGasoilUsdPerBarrel}`;
+  $("gasoilDelta").textContent=`+${data.prices.gasoilVsPreConflictPct}% vs pre-conflict`;
+  $("scheduledArrivals").textContent=`${data.national.scheduledArrivalsBillionLitres}bn L`;
+  $("priceExposure").textContent=`${data.prices.gasoilVsPreConflictPct}%`;
+  $("watchFlow").textContent=data.flows.cleanProductEquivalentDays;
+  $("watchDiesel").textContent=data.national.coverDays.diesel;
+  $("watchOutages").textContent=`${data.queensland.dieselStockouts} / ${data.queensland.retailSites}`;
+
+  $("scenarioButtons").innerHTML=Object.entries(data.seqModel.scenarios).map(([key,s])=>`<button class="scenario" data-key="${key}">${s.label}</button>`).join("");
+  document.querySelectorAll(".scenario").forEach(b=>b.addEventListener("click",()=>selectScenario(b.dataset.key)));
+  for(const id of ["petrolSupply","dieselSupply","jetSupply","demand"])$(id).addEventListener("input",()=>{
+    document.querySelectorAll(".scenario").forEach(b=>b.classList.remove("active"));
+    $("scenarioDescription").textContent="Custom assumptions. Replenishment is expressed as a share of normal product demand.";
+    updateControls();
+  });
+  const max=Math.max(...data.importsMay2026.topOrigins.map(d=>d.volumeML));
+  $("importBars").innerHTML=data.importsMay2026.topOrigins.map(d=>`<div class="bar-row"><span>${d.country}</span><div class="bar-track"><div class="bar-fill" style="width:${d.volumeML/max*100}%"></div></div><span class="num">${d.volumeML.toFixed(0)} ML</span></div>`).join("");
+  selectScenario(data.seqModel.defaultScenario||"base");
+}
+
+fetch("data/snapshot.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error(r.status);return r.json()}).catch(()=>fallback).then(d=>{data=d;populate()});
+</script>
 </body>
 </html>
