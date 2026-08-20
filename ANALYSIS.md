@@ -1,6 +1,10 @@
 # Strait of Hormuz and Brisbane/SEQ fuel supply
 
-**Assessment date:** 28 July 2026 (Australia/Brisbane)
+**Archived assessment date:** 28 July 2026 (Australia/Brisbane)
+
+> This document is a historical reviewed narrative. Current quantitative values
+> are maintained in the dashboard and `data/snapshot.json`; do not treat figures
+> below as the latest release.
 
 ## Bottom line
 
