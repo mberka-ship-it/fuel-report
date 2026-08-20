@@ -45,9 +45,10 @@ jobs:
             --user-agent="SEQ-fuel-security-monitor/2.0" \
             --output-document="$fixture_dir/aps.html" \
             "https://www.energy.gov.au/publications/australian-petroleum-statistics-2026"
-          curl --fail --location --retry 3 --retry-all-errors --connect-timeout 15 --max-time 120 \
-            --user-agent "SEQ-fuel-security-monitor/2.0" \
-            "https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx" --output "$fixture_dir/mso.xlsx"
+          wget --quiet --tries=3 --timeout=90 \
+            --user-agent="SEQ-fuel-security-monitor/2.0" \
+            --output-document="$fixture_dir/mso.xlsx" \
+            "https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx"
           aps_url=$(python -c "from pathlib import Path; from scripts.refresh_dashboard import latest_aps_link; print(latest_aps_link(Path('$fixture_dir/aps.html').read_bytes())[0])")
           wget --quiet --tries=3 --timeout=120 \
             --user-agent="SEQ-fuel-security-monitor/2.0" \
