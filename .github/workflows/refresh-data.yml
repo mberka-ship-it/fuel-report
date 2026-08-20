@@ -41,16 +41,18 @@ jobs:
           curl --fail --location --retry 3 --retry-all-errors --connect-timeout 15 --max-time 120 \
             --user-agent "SEQ-fuel-security-monitor/2.0" \
             "https://fuelplan.gov.au/fuel-statistics" --output "$fixture_dir/fuelplan.html"
-          curl --fail --location --retry 3 --retry-all-errors --connect-timeout 15 --max-time 120 \
-            --user-agent "SEQ-fuel-security-monitor/2.0" \
-            "https://www.energy.gov.au/publications/australian-petroleum-statistics-2026" --output "$fixture_dir/aps.html"
+          wget --quiet --tries=3 --timeout=90 \
+            --user-agent="SEQ-fuel-security-monitor/2.0" \
+            --output-document="$fixture_dir/aps.html" \
+            "https://www.energy.gov.au/publications/australian-petroleum-statistics-2026"
           curl --fail --location --retry 3 --retry-all-errors --connect-timeout 15 --max-time 120 \
             --user-agent "SEQ-fuel-security-monitor/2.0" \
             "https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx" --output "$fixture_dir/mso.xlsx"
           aps_url=$(python -c "from pathlib import Path; from scripts.refresh_dashboard import latest_aps_link; print(latest_aps_link(Path('$fixture_dir/aps.html').read_bytes())[0])")
-          curl --fail --location --retry 3 --retry-all-errors --connect-timeout 15 --max-time 180 \
-            --user-agent "SEQ-fuel-security-monitor/2.0" \
-            "$aps_url" --output "$fixture_dir/aps.xlsx"
+          wget --quiet --tries=3 --timeout=120 \
+            --user-agent="SEQ-fuel-security-monitor/2.0" \
+            --output-document="$fixture_dir/aps.xlsx" \
+            "$aps_url"
           echo "FUEL_REFRESH_FIXTURE_DIR=$fixture_dir" >> "$GITHUB_ENV"
 
       - name: Refresh official sources and dashboard payload
