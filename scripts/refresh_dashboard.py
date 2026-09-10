@@ -135,7 +135,7 @@ def signed_int_from_parenthetical(value: str) -> int:
 def parse_fuel_plan(content: bytes) -> dict[str, Any]:
     text = html_text(content)
 
-    price_date_match = must_match(r"\d{1,2}) ([A-Za-z]+) (\d{4})", text, "retail price date")
+    price_date_match = must_match( ([A-Za-z]+) (\d{4})", text, "retail price date")
     stock_date_match = must_match(r"Days of fuel reserves held under MSO (\d{1,2}) ([A-Za-z]+) (\d{4})", text, "MSO date")
     flow_dates_match = must_match(
         r"Ships on water to Australia As at (\d{1,2}) ([A-Za-z]+) (\d{4}) As at (\d{1,2}) ([A-Za-z]+) (\d{4})",
