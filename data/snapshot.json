@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-20T01:12:42Z",
+  "generatedAt": "2026-09-21T01:09:31Z",
   "sourcePeriods": {
     "fuelPlanPrices": "2026-09-09",
     "fuelPlanStocks": "2026-09-08",
     "fuelPlanFlows": "2026-09-11",
     "fuelPlanRetailAvailability": "2026-09-11",
-    "msoWeekly": "2026-09-08",
+    "msoWeekly": "2026-09-15",
     "apsMonthly": "2026-07-01"
   },
   "sourceUrls": {
@@ -127,24 +127,6 @@
       }
     ],
     "mso_trend": [
-      {
-        "date": "2026-06-23",
-        "fuel": "Diesel",
-        "days": 37,
-        "held_ml": 3466
-      },
-      {
-        "date": "2026-06-23",
-        "fuel": "Jet fuel",
-        "days": 29,
-        "held_ml": 814
-      },
-      {
-        "date": "2026-06-23",
-        "fuel": "Petrol",
-        "days": 44,
-        "held_ml": 1883
-      },
       {
         "date": "2026-06-30",
         "fuel": "Diesel",
@@ -342,38 +324,56 @@
         "fuel": "Petrol",
         "days": 41,
         "held_ml": 1763
+      },
+      {
+        "date": "2026-09-15",
+        "fuel": "Diesel",
+        "days": 31,
+        "held_ml": 2853
+      },
+      {
+        "date": "2026-09-15",
+        "fuel": "Jet fuel",
+        "days": 32,
+        "held_ml": 863
+      },
+      {
+        "date": "2026-09-15",
+        "fuel": "Petrol",
+        "days": 41,
+        "held_ml": 1730
       }
     ],
     "mso_latest": [
       {
         "fuel": "Petrol",
-        "as_at": "2026-09-08",
-        "held_ml": 1763,
+        "as_at": "2026-09-15",
+        "held_ml": 1730,
         "days": 41,
         "baseline_required_ml": 1067,
         "effective_required_ml": 862,
-        "surplus_vs_baseline": 0.652,
-        "surplus_vs_effective": 1.045
+        "surplus_vs_baseline": 0.621,
+        "surplus_vs_effective": 1.007
       },
       {
         "fuel": "Diesel",
-        "as_at": "2026-09-08",
-        "held_ml": 2949,
-        "days": 32,
+        "as_at": "2026-09-15",
+        "held_ml": 2853,
+        "days": 31,
         "baseline_required_ml": 2742,
         "effective_required_ml": 2225,
-        "surplus_vs_baseline": 0.075,
-        "surplus_vs_effective": 0.325
+        "surplus_vs_baseline": 0.04,
+        "surplus_vs_effective": 0.282
       },
       {
         "fuel": "Jet fuel",
-        "as_at": "2026-09-08",
-        "held_ml": 827,
-        "days": 30,
+        "as_at": "2026-09-15",
+        "held_ml": 863,
+        "days": 32,
         "baseline_required_ml": 663,
         "effective_required_ml": 663,
-        "surplus_vs_baseline": 0.247,
-        "surplus_vs_effective": 0.247
+        "surplus_vs_baseline": 0.302,
+        "surplus_vs_effective": 0.302
       }
     ],
     "qld_demand_index": [
@@ -723,23 +723,29 @@
       {
         "scenario": "Base — 98% petrol / 96% diesel / 98% jet replenishment",
         "petrol_days": 39.9,
-        "diesel_days": 29.8,
-        "jet_days": 28.9
+        "diesel_days": 28.8,
+        "jet_days": 30.9
       },
       {
         "scenario": "Tight — 90% / 85% / 88%",
         "petrol_days": 35.4,
-        "diesel_days": 23.6,
-        "jet_days": 23.3
+        "diesel_days": 22.6,
+        "jet_days": 25.3
       },
       {
         "scenario": "Severe — 75% / 60% / 70%",
         "petrol_days": 27.0,
-        "diesel_days": 9.6,
-        "jet_days": 13.2
+        "diesel_days": 8.6,
+        "jet_days": 15.2
       }
     ],
     "developments": [
+      {
+        "date": "2026-09-15",
+        "development": "MSO stocks were 41 days petrol, 31 days diesel and 32 days jet fuel.",
+        "implication": "These are government-mandated industry holdings, not a government-owned strategic reserve.",
+        "source": "DCCEEW"
+      },
       {
         "date": "2026-09-11",
         "development": "Clean-product ships were 35 and 12 consumption-equivalent days; at least 3.3bn L is scheduled over four weeks.",
@@ -751,12 +757,6 @@
         "development": "Queensland diesel-affected sites were 26 (+7 week on week); petrol-affected sites were 24 (+7).",
         "implication": "This is a statewide availability proxy; it does not isolate Southeast Queensland or terminal inventories.",
         "source": "Fuel Plan"
-      },
-      {
-        "date": "2026-09-08",
-        "development": "MSO stocks were 41 days petrol, 32 days diesel and 30 days jet fuel.",
-        "implication": "These are government-mandated industry holdings, not a government-owned strategic reserve.",
-        "source": "DCCEEW"
       },
       {
         "date": "2026-08-12",
