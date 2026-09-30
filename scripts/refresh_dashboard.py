@@ -152,8 +152,7 @@ def parse_fuel_plan(content: bytes) -> dict[str, Any]:
 
     plan_level = int(must_match(r"Level (\d+) - National Fuel Security Plan", text, "plan level").group(1))
     prices = must_match(
-        r"5 largest cities\* \$([\d.]+) \(([+-]?\d+(?:.\d+)?)%\) \$([\d.]+) \(([+-]?\d+(?:.\d+)?)%\).*?BRIS \$([\d.]+) \(([+-]?\d+(?:.\d+)?)%\) \$([\d.]+) \(([+-]?\d+(?:.\d+)?)%\)",
-        text,
+        r"5 largest cities\* \$([\d.]+) \(([+-]?\d+(?:[.]\d+)?)%\) \$([\d.]+) \(([+-]?\d+(?:[.]\d+)?)%\).*?BRIS \$([\d.]+) \(([+-]?\d+(?:[.]\d+)?)%\) \$([\d.]+) \(([+-]?\d+(?:[.]\d+)?)%\)",        text,
         "retail prices",
     ).groups()
     pre_conflict = must_match(
@@ -163,8 +162,7 @@ def parse_fuel_plan(content: bytes) -> dict[str, Any]:
         re.IGNORECASE,
     ).groups()
     benchmarks = must_match(
-        r"Brent Crude US\$([\d.]+) \(([+-]?\d+(?:.\d+)?)%\) \+?([+-]?\d+)% Singapore Gasoil \(diesel\) US\$([\d.]+) \(([+-]?\d+(?:.\d+)?)%\) \+?([+-]?\d+)%",
-        text,
+        r"Brent Crude US\$([\d.]+) \(([+-]?\d+(?:[.]\d+)?)%\) \+?([+-]?\d+(?:[.]\d+)?)% Singapore Gasoil \(diesel\) US\$([\d.]+) \(([+-]?\d+(?:[.]\d+)?)%\) \+?([+-]?\d+(?:[.]\d+)?)%",
         "international benchmark prices",
     ).groups()
     cover = must_match(
