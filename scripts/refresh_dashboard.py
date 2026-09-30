@@ -163,6 +163,7 @@ def parse_fuel_plan(content: bytes) -> dict[str, Any]:
     ).groups()
     benchmarks = must_match(
         r"Brent Crude US\$([\d.]+) \(([+-]?\d+(?:[.]\d+)?)%\) \+?([+-]?\d+(?:[.]\d+)?)% Singapore Gasoil \(diesel\) US\$([\d.]+) \(([+-]?\d+(?:[.]\d+)?)%\) \+?([+-]?\d+(?:[.]\d+)?)%",
+        text,
         "international benchmark prices",
     ).groups()
     cover = must_match(
