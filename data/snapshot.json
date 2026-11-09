@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-11-08T02:31:25Z",
+  "generatedAt": "2026-11-09T02:41:40Z",
   "sourcePeriods": {
-    "fuelPlanPrices": "2026-10-28",
-    "fuelPlanStocks": "2026-10-27",
-    "fuelPlanFlows": "2026-10-30",
-    "fuelPlanRetailAvailability": "2026-10-30",
+    "fuelPlanPrices": "2026-11-04",
+    "fuelPlanStocks": "2026-11-03",
+    "fuelPlanFlows": "2026-11-06",
+    "fuelPlanRetailAvailability": "2026-11-06",
     "msoWeekly": "2026-10-27",
     "apsMonthly": "2026-07-01"
   },
@@ -21,44 +21,38 @@
         "brisbane_petrol_wow": 0.0,
         "brisbane_diesel": 2.81,
         "brisbane_diesel_wow": 0.0,
-        "qld_petrol_affected_share": 0.014444444444444444,
-        "qld_petrol_affected_prior_share": 0.012777777777777779,
-        "qld_diesel_affected_share": 0.015,
+        "qld_petrol_affected_share": 0.013333333333333334,
+        "qld_petrol_affected_prior_share": 0.014444444444444444,
+        "qld_diesel_affected_share": 0.01611111111111111,
         "qld_diesel_affected_prior_share": 0.015,
-        "clean_pipeline_days": 13,
+        "clean_pipeline_days": 15,
         "clean_pipeline_prior_days": 13,
-        "forward_orders_bn_l": 3.1,
-        "diesel_stock_days": 34,
-        "diesel_stock_vs_march_days": 2
+        "forward_orders_bn_l": 2.8,
+        "diesel_stock_days": 31,
+        "diesel_stock_vs_march_days": -1
       }
     ],
     "qld_outages": [
       {
         "fuel": "Petrol",
-        "unleaded_or_diesel_only": 13,
-        "both_out": 13,
-        "affected_sites": 26,
-        "prior_affected_sites": 23,
-        "weekly_change_sites": 3,
-        "affected_share": 0.0144
+        "unleaded_or_diesel_only": 12,
+        "both_out": 12,
+        "affected_sites": 24,
+        "prior_affected_sites": 26,
+        "weekly_change_sites": -2,
+        "affected_share": 0.0133
       },
       {
         "fuel": "Diesel",
-        "unleaded_or_diesel_only": 14,
-        "both_out": 13,
-        "affected_sites": 27,
+        "unleaded_or_diesel_only": 17,
+        "both_out": 12,
+        "affected_sites": 29,
         "prior_affected_sites": 27,
-        "weekly_change_sites": 0,
-        "affected_share": 0.015
+        "weekly_change_sites": 2,
+        "affected_share": 0.0161
       }
     ],
     "shipment_days": [
-      {
-        "flow": "Crude oil",
-        "period": "23 Oct",
-        "days": 11,
-        "tankers": 7
-      },
       {
         "flow": "Crude oil",
         "period": "30 Oct",
@@ -66,64 +60,70 @@
         "tankers": 5
       },
       {
-        "flow": "Clean products",
-        "period": "23 Oct",
+        "flow": "Crude oil",
+        "period": "6 Nov",
         "days": 13,
-        "tankers": 38
+        "tankers": 5
       },
       {
         "flow": "Clean products",
         "period": "30 Oct",
         "days": 13,
         "tankers": 38
+      },
+      {
+        "flow": "Clean products",
+        "period": "6 Nov",
+        "days": 15,
+        "tankers": 43
       }
     ],
     "price_movements": [
       {
         "market": "Five-city petrol",
-        "current": 2.34,
+        "current": 2.33,
         "unit": "A$/L",
-        "weekly_change": -0.01,
-        "change_since_pre_conflict": 0.63,
+        "weekly_change": 0.0,
+        "change_since_pre_conflict": 0.62,
         "since_unit": "A$/L"
       },
       {
         "market": "Five-city diesel",
-        "current": 2.77,
+        "current": 2.76,
         "unit": "A$/L",
         "weekly_change": 0.0,
-        "change_since_pre_conflict": 1.0,
+        "change_since_pre_conflict": 0.99,
         "since_unit": "A$/L"
       },
       {
         "market": "Brent crude",
-        "current": 130.0,
+        "current": 114.0,
         "unit": "US$/bbl",
-        "weekly_change": -0.04,
-        "change_since_pre_conflict": 78.0,
+        "weekly_change": -0.12,
+        "change_since_pre_conflict": 56.0,
         "since_unit": "%"
       },
       {
         "market": "Singapore gasoil",
-        "current": 177.0,
+        "current": 170.0,
         "unit": "US$/bbl",
-        "weekly_change": 0.03,
-        "change_since_pre_conflict": 99.0,
+        "weekly_change": -0.04,
+        "change_since_pre_conflict": 91.0,
         "since_unit": "%"
       }
     ],
     "benchmark_change": [
       {
         "benchmark": "Brent crude",
-        "change": 0.78,
-        "current_usd_bbl": 130.0,
-        "weekly_change": -0.04
+        "change": 0.56,
+        "current_usd_bbl": 114.0,
+        "weekly_change": -0.12
       },
       {
         "benchmark": "Singapore gasoil",
-        "change": 0.99,
-        "current_usd_bbl": 177.0,
-        "weekly_change": 0.03
+        "change": 0.91,
+        "current_usd_bbl": 170.0,
+        "weekly_change": -0.04
       }
     ],
     "mso_trend": [
@@ -741,14 +741,14 @@
     ],
     "developments": [
       {
-        "date": "2026-10-30",
-        "development": "Clean-product ships were 38 and 13 consumption-equivalent days; at least 3.1bn L is scheduled over four weeks.",
+        "date": "2026-11-06",
+        "development": "Clean-product ships were 43 and 15 consumption-equivalent days; at least 2.8bn L is scheduled over four weeks.",
         "implication": "Inbound cover remains material, but the weekly ship count is a rolling pipeline snapshot rather than guaranteed delivered stock.",
         "source": "Fuel Plan"
       },
       {
-        "date": "2026-10-30",
-        "development": "Queensland diesel-affected sites were 27 (+0 week on week); petrol-affected sites were 26 (+3).",
+        "date": "2026-11-06",
+        "development": "Queensland diesel-affected sites were 29 (+2 week on week); petrol-affected sites were 24 (-2).",
         "implication": "This is a statewide availability proxy; it does not isolate Southeast Queensland or terminal inventories.",
         "source": "Fuel Plan"
       },
