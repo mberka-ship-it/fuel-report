@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-17T05:06:02Z",
+  "generatedAt": "2026-11-18T04:27:01Z",
   "sourcePeriods": {
     "fuelPlanPrices": "2026-11-11",
     "fuelPlanStocks": "2026-11-10",
     "fuelPlanFlows": "2026-11-13",
     "fuelPlanRetailAvailability": "2026-11-16",
-    "msoWeekly": "2026-11-03",
+    "msoWeekly": "2026-11-10",
     "apsMonthly": "2026-09-01"
   },
   "sourceUrls": {
@@ -127,24 +127,6 @@
       }
     ],
     "mso_trend": [
-      {
-        "date": "2026-08-18",
-        "fuel": "Diesel",
-        "days": 36,
-        "held_ml": 3315
-      },
-      {
-        "date": "2026-08-18",
-        "fuel": "Jet fuel",
-        "days": 34,
-        "held_ml": 936
-      },
-      {
-        "date": "2026-08-18",
-        "fuel": "Petrol",
-        "days": 44,
-        "held_ml": 1876
-      },
       {
         "date": "2026-08-25",
         "fuel": "Diesel",
@@ -342,38 +324,56 @@
         "fuel": "Petrol",
         "days": 41,
         "held_ml": 1758
+      },
+      {
+        "date": "2026-11-10",
+        "fuel": "Diesel",
+        "days": 35,
+        "held_ml": 3193
+      },
+      {
+        "date": "2026-11-10",
+        "fuel": "Jet fuel",
+        "days": 31,
+        "held_ml": 845
+      },
+      {
+        "date": "2026-11-10",
+        "fuel": "Petrol",
+        "days": 39,
+        "held_ml": 1659
       }
     ],
     "mso_latest": [
       {
         "fuel": "Petrol",
-        "as_at": "2026-11-03",
-        "held_ml": 1758,
-        "days": 41,
+        "as_at": "2026-11-10",
+        "held_ml": 1659,
+        "days": 39,
         "baseline_required_ml": 1106,
         "effective_required_ml": 885,
-        "surplus_vs_baseline": 0.59,
-        "surplus_vs_effective": 0.986
+        "surplus_vs_baseline": 0.5,
+        "surplus_vs_effective": 0.875
       },
       {
         "fuel": "Diesel",
-        "as_at": "2026-11-03",
-        "held_ml": 2848,
-        "days": 31,
+        "as_at": "2026-11-10",
+        "held_ml": 3193,
+        "days": 35,
         "baseline_required_ml": 2827,
         "effective_required_ml": 2262,
-        "surplus_vs_baseline": 0.007,
-        "surplus_vs_effective": 0.259
+        "surplus_vs_baseline": 0.129,
+        "surplus_vs_effective": 0.412
       },
       {
         "fuel": "Jet fuel",
-        "as_at": "2026-11-03",
-        "held_ml": 750,
-        "days": 28,
+        "as_at": "2026-11-10",
+        "held_ml": 845,
+        "days": 31,
         "baseline_required_ml": 677,
         "effective_required_ml": 677,
-        "surplus_vs_baseline": 0.108,
-        "surplus_vs_effective": 0.108
+        "surplus_vs_baseline": 0.248,
+        "surplus_vs_effective": 0.248
       }
     ],
     "qld_demand_index": [
@@ -722,21 +722,21 @@
     "scenario_week8": [
       {
         "scenario": "Base — 98% petrol / 96% diesel / 98% jet replenishment",
-        "petrol_days": 39.9,
-        "diesel_days": 28.8,
-        "jet_days": 26.9
+        "petrol_days": 37.9,
+        "diesel_days": 32.8,
+        "jet_days": 29.9
       },
       {
         "scenario": "Tight — 90% / 85% / 88%",
-        "petrol_days": 35.4,
-        "diesel_days": 22.6,
-        "jet_days": 21.3
+        "petrol_days": 33.4,
+        "diesel_days": 26.6,
+        "jet_days": 24.3
       },
       {
         "scenario": "Severe — 75% / 60% / 70%",
-        "petrol_days": 27.0,
-        "diesel_days": 8.6,
-        "jet_days": 11.2
+        "petrol_days": 25.0,
+        "diesel_days": 12.6,
+        "jet_days": 14.2
       }
     ],
     "developments": [
@@ -753,8 +753,8 @@
         "source": "Fuel Plan"
       },
       {
-        "date": "2026-11-03",
-        "development": "MSO stocks were 41 days petrol, 31 days diesel and 28 days jet fuel.",
+        "date": "2026-11-10",
+        "development": "MSO stocks were 39 days petrol, 35 days diesel and 31 days jet fuel.",
         "implication": "These are government-mandated industry holdings, not a government-owned strategic reserve.",
         "source": "DCCEEW"
       },
