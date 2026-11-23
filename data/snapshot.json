@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-22T03:13:30Z",
+  "generatedAt": "2026-11-23T03:44:30Z",
   "sourcePeriods": {
-    "fuelPlanPrices": "2026-11-11",
-    "fuelPlanStocks": "2026-11-10",
-    "fuelPlanFlows": "2026-11-13",
-    "fuelPlanRetailAvailability": "2026-11-16",
-    "msoWeekly": "2026-11-10",
+    "fuelPlanPrices": "2026-11-18",
+    "fuelPlanStocks": "2026-11-17",
+    "fuelPlanFlows": "2026-11-20",
+    "fuelPlanRetailAvailability": "2026-11-20",
+    "msoWeekly": "2026-11-17",
     "apsMonthly": "2026-09-01"
   },
   "sourceUrls": {
@@ -17,48 +17,42 @@
     "fuelplan_summary": [
       {
         "plan_level": 2,
-        "brisbane_petrol": 2.23,
+        "brisbane_petrol": 2.12,
         "brisbane_petrol_wow": -0.05,
-        "brisbane_diesel": 2.71,
+        "brisbane_diesel": 2.63,
         "brisbane_diesel_wow": -0.03,
-        "qld_petrol_affected_share": 0.021111111111111112,
-        "qld_petrol_affected_prior_share": 0.013333333333333334,
-        "qld_diesel_affected_share": 0.025555555555555557,
-        "qld_diesel_affected_prior_share": 0.01611111111111111,
-        "clean_pipeline_days": 13,
-        "clean_pipeline_prior_days": 14,
+        "qld_petrol_affected_share": 0.012777777777777779,
+        "qld_petrol_affected_prior_share": 0.021111111111111112,
+        "qld_diesel_affected_share": 0.012777777777777779,
+        "qld_diesel_affected_prior_share": 0.025555555555555557,
+        "clean_pipeline_days": 16,
+        "clean_pipeline_prior_days": 13,
         "forward_orders_bn_l": 3.0,
-        "diesel_stock_days": 35,
-        "diesel_stock_vs_march_days": 3
+        "diesel_stock_days": 34,
+        "diesel_stock_vs_march_days": 2
       }
     ],
     "qld_outages": [
       {
         "fuel": "Petrol",
-        "unleaded_or_diesel_only": 20,
-        "both_out": 18,
-        "affected_sites": 38,
-        "prior_affected_sites": 24,
-        "weekly_change_sites": 14,
-        "affected_share": 0.0211
+        "unleaded_or_diesel_only": 13,
+        "both_out": 10,
+        "affected_sites": 23,
+        "prior_affected_sites": 38,
+        "weekly_change_sites": -15,
+        "affected_share": 0.0128
       },
       {
         "fuel": "Diesel",
-        "unleaded_or_diesel_only": 28,
-        "both_out": 18,
-        "affected_sites": 46,
-        "prior_affected_sites": 29,
-        "weekly_change_sites": 17,
-        "affected_share": 0.0256
+        "unleaded_or_diesel_only": 13,
+        "both_out": 10,
+        "affected_sites": 23,
+        "prior_affected_sites": 46,
+        "weekly_change_sites": -23,
+        "affected_share": 0.0128
       }
     ],
     "shipment_days": [
-      {
-        "flow": "Crude oil",
-        "period": "6 Nov",
-        "days": 13,
-        "tankers": 5
-      },
       {
         "flow": "Crude oil",
         "period": "13 Nov",
@@ -66,85 +60,73 @@
         "tankers": 6
       },
       {
-        "flow": "Clean products",
-        "period": "6 Nov",
-        "days": 14,
-        "tankers": 43
+        "flow": "Crude oil",
+        "period": "20 Nov",
+        "days": 17,
+        "tankers": 6
       },
       {
         "flow": "Clean products",
         "period": "13 Nov",
         "days": 13,
         "tankers": 40
+      },
+      {
+        "flow": "Clean products",
+        "period": "20 Nov",
+        "days": 16,
+        "tankers": 44
       }
     ],
     "price_movements": [
       {
         "market": "Five-city petrol",
-        "current": 2.19,
+        "current": 2.08,
         "unit": "A$/L",
-        "weekly_change": -0.06,
-        "change_since_pre_conflict": 0.48,
+        "weekly_change": -0.05,
+        "change_since_pre_conflict": 0.37,
         "since_unit": "A$/L"
       },
       {
         "market": "Five-city diesel",
-        "current": 2.66,
+        "current": 2.58,
         "unit": "A$/L",
         "weekly_change": -0.03,
-        "change_since_pre_conflict": 0.9,
+        "change_since_pre_conflict": 0.82,
         "since_unit": "A$/L"
       },
       {
         "market": "Brent crude",
-        "current": 95.0,
+        "current": 92.0,
         "unit": "US$/bbl",
-        "weekly_change": -0.17,
-        "change_since_pre_conflict": 30.0,
+        "weekly_change": -0.03,
+        "change_since_pre_conflict": 26.0,
         "since_unit": "%"
       },
       {
         "market": "Singapore gasoil",
-        "current": 159.0,
+        "current": 150.0,
         "unit": "US$/bbl",
         "weekly_change": -0.06,
-        "change_since_pre_conflict": 79.0,
+        "change_since_pre_conflict": 69.0,
         "since_unit": "%"
       }
     ],
     "benchmark_change": [
       {
         "benchmark": "Brent crude",
-        "change": 0.3,
-        "current_usd_bbl": 95.0,
-        "weekly_change": -0.17
+        "change": 0.26,
+        "current_usd_bbl": 92.0,
+        "weekly_change": -0.03
       },
       {
         "benchmark": "Singapore gasoil",
-        "change": 0.79,
-        "current_usd_bbl": 159.0,
+        "change": 0.69,
+        "current_usd_bbl": 150.0,
         "weekly_change": -0.06
       }
     ],
     "mso_trend": [
-      {
-        "date": "2026-08-25",
-        "fuel": "Diesel",
-        "days": 36,
-        "held_ml": 3351
-      },
-      {
-        "date": "2026-08-25",
-        "fuel": "Jet fuel",
-        "days": 31,
-        "held_ml": 840
-      },
-      {
-        "date": "2026-08-25",
-        "fuel": "Petrol",
-        "days": 41,
-        "held_ml": 1743
-      },
       {
         "date": "2026-09-01",
         "fuel": "Diesel",
@@ -342,38 +324,56 @@
         "fuel": "Petrol",
         "days": 39,
         "held_ml": 1659
+      },
+      {
+        "date": "2026-11-17",
+        "fuel": "Diesel",
+        "days": 34,
+        "held_ml": 3139
+      },
+      {
+        "date": "2026-11-17",
+        "fuel": "Jet fuel",
+        "days": 27,
+        "held_ml": 731
+      },
+      {
+        "date": "2026-11-17",
+        "fuel": "Petrol",
+        "days": 40,
+        "held_ml": 1695
       }
     ],
     "mso_latest": [
       {
         "fuel": "Petrol",
-        "as_at": "2026-11-10",
-        "held_ml": 1659,
-        "days": 39,
+        "as_at": "2026-11-17",
+        "held_ml": 1695,
+        "days": 40,
         "baseline_required_ml": 1106,
         "effective_required_ml": 885,
-        "surplus_vs_baseline": 0.5,
-        "surplus_vs_effective": 0.875
+        "surplus_vs_baseline": 0.533,
+        "surplus_vs_effective": 0.915
       },
       {
         "fuel": "Diesel",
-        "as_at": "2026-11-10",
-        "held_ml": 3193,
-        "days": 35,
+        "as_at": "2026-11-17",
+        "held_ml": 3139,
+        "days": 34,
         "baseline_required_ml": 2827,
         "effective_required_ml": 2262,
-        "surplus_vs_baseline": 0.129,
-        "surplus_vs_effective": 0.412
+        "surplus_vs_baseline": 0.11,
+        "surplus_vs_effective": 0.388
       },
       {
         "fuel": "Jet fuel",
-        "as_at": "2026-11-10",
-        "held_ml": 845,
-        "days": 31,
+        "as_at": "2026-11-17",
+        "held_ml": 731,
+        "days": 27,
         "baseline_required_ml": 677,
         "effective_required_ml": 677,
-        "surplus_vs_baseline": 0.248,
-        "surplus_vs_effective": 0.248
+        "surplus_vs_baseline": 0.08,
+        "surplus_vs_effective": 0.08
       }
     ],
     "qld_demand_index": [
@@ -722,39 +722,39 @@
     "scenario_week8": [
       {
         "scenario": "Base — 98% petrol / 96% diesel / 98% jet replenishment",
-        "petrol_days": 37.9,
-        "diesel_days": 32.8,
-        "jet_days": 29.9
+        "petrol_days": 38.9,
+        "diesel_days": 31.8,
+        "jet_days": 25.9
       },
       {
         "scenario": "Tight — 90% / 85% / 88%",
-        "petrol_days": 33.4,
-        "diesel_days": 26.6,
-        "jet_days": 24.3
+        "petrol_days": 34.4,
+        "diesel_days": 25.6,
+        "jet_days": 20.3
       },
       {
         "scenario": "Severe — 75% / 60% / 70%",
-        "petrol_days": 25.0,
-        "diesel_days": 12.6,
-        "jet_days": 14.2
+        "petrol_days": 26.0,
+        "diesel_days": 11.6,
+        "jet_days": 10.2
       }
     ],
     "developments": [
       {
-        "date": "2026-11-16",
-        "development": "Queensland diesel-affected sites were 46 (+17 week on week); petrol-affected sites were 38 (+14).",
-        "implication": "This is a statewide availability proxy; it does not isolate Southeast Queensland or terminal inventories.",
-        "source": "Fuel Plan"
-      },
-      {
-        "date": "2026-11-13",
-        "development": "Clean-product ships were 40 and 13 consumption-equivalent days; at least 3.0bn L is scheduled over four weeks.",
+        "date": "2026-11-20",
+        "development": "Clean-product ships were 44 and 16 consumption-equivalent days; at least 3.0bn L is scheduled over four weeks.",
         "implication": "Inbound cover remains material, but the weekly ship count is a rolling pipeline snapshot rather than guaranteed delivered stock.",
         "source": "Fuel Plan"
       },
       {
-        "date": "2026-11-10",
-        "development": "MSO stocks were 39 days petrol, 35 days diesel and 31 days jet fuel.",
+        "date": "2026-11-20",
+        "development": "Queensland diesel-affected sites were 23 (-23 week on week); petrol-affected sites were 23 (-15).",
+        "implication": "This is a statewide availability proxy; it does not isolate Southeast Queensland or terminal inventories.",
+        "source": "Fuel Plan"
+      },
+      {
+        "date": "2026-11-17",
+        "development": "MSO stocks were 40 days petrol, 34 days diesel and 27 days jet fuel.",
         "implication": "These are government-mandated industry holdings, not a government-owned strategic reserve.",
         "source": "DCCEEW"
       },
